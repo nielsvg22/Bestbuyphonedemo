@@ -24,7 +24,7 @@ var io=new IntersectionObserver(function(entries){
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 
-[['catScroll'],['productScroll']].forEach(function(pair){
+[['catScroll']].forEach(function(pair){
   var scroller=document.getElementById(pair[0]);
   if(!scroller) return;
   var dots=scroller.parentElement.querySelectorAll('.snapdots span');

@@ -17,7 +17,7 @@
   <a class="logo"><svg class="mark" viewBox="0 0 24 24"><path d="M12 0c.9 3.2 2 5.6 3.4 7.1C16.9 8.6 19.2 9.7 22.4 10.6c-3.2.9-5.5 2-7 3.5C13.9 15.6 12.8 18 12 21.1c-.8-3.1-1.9-5.5-3.4-7C7.1 12.6 4.8 11.5 1.6 10.6c3.2-.9 5.5-2 7-3.5C10.1 5.6 11.2 3.2 12 0z"/></svg>iSelectStore</a>
   <nav class="links"><a>Home</a><a>Voorraad</a><a>Originele iPhone?</a><a>Veel gestelde vragen</a><a>iPhone verkopen/inruilen</a><a>Contact</a></nav>
   <div class="icons">
-    <button class="ic" aria-label="Zoeken">🔍</button>
+    <button class="ic" id="searchIcon" aria-label="Zoeken">🔍</button>
     <button class="ic" aria-label="Favorieten">♡</button>
     <a class="ic" href="cart.html" aria-label="Winkelwagen">🛍<span class="count">0</span></a>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -62,15 +62,42 @@
 </div></section>
 
 <section id="producten" style="padding-top:6px"><div class="wrap reveal">
-  <div class="head"><div><p class="eyebrow">Voorraad</p><h2>Onze producten</h2><p class="sub">Bekijk de specifieke staat en batterijconditie per product door unieke foto's van het daadwerkelijke toestel.</p></div><a class="link">Bekijk alle voorraad →</a></div>
-  <div class="tabs"><span class="tab active">Alle</span><span class="tab">iPhone</span><span class="tab">iPad</span><span class="tab">MacBook</span><span class="tab">Apple Watch</span></div>
-  <div class="products" id="productScroll">
-    <article class="card"><button class="heart">♡</button><img src="images/iphone.jpg"><span class="badge">100% batterij</span><h3>iPhone Air 512GB zwart</h3><div class="meta">Krasvrij · 100% batt · incl. 12 mnd garantie, doos en oplaadkabel</div><div class="price"><b>€ 789,-</b><span class="old">€ 899,-</span></div><a class="add" href="product.html" style="text-align:center">Bekijk toestel</a></article>
-    <article class="card"><button class="heart">♡</button><img src="images/iphone2.jpg"><span class="badge">Krasvrij</span><h3>iPhone 16 Pro 128GB wit</h3><div class="meta">Krasvrij · 91% batt · incl. 12 mnd garantie en oplaadkabel</div><div class="price"><b>€ 619,-</b><span class="old">€ 719,-</span></div><a class="add" href="product.html" style="text-align:center">Bekijk toestel</a></article>
-    <article class="card"><button class="heart">♡</button><img src="images/iphone3.jpg"><span class="badge">Hoge batterijconditie</span><h3>iPhone 15 Pro 256GB zwart</h3><div class="meta">Licht gebruikt · 95% batt · incl. 12 mnd garantie</div><div class="price"><b>€ 579,-</b><span class="old">€ 679,-</span></div><a class="add" href="product.html" style="text-align:center">Bekijk toestel</a></article>
-    <article class="card"><button class="heart">♡</button><img src="images/iphone4.jpg"><span class="badge">Hoge batterijconditie</span><h3>iPhone 15 Pro 128GB zwart</h3><div class="meta">Zeer nette staat · 98% batt · incl. 12 mnd garantie</div><div class="price"><b>€ 569,-</b><span class="old">€ 629,-</span></div><a class="add" href="product.html" style="text-align:center">Bekijk toestel</a></article>
+  <div class="head"><div><p class="eyebrow">Voorraad</p><h2>Onze producten</h2><p class="sub">Bekijk de specifieke staat en batterijconditie per product door unieke foto's van het daadwerkelijke toestel.</p></div></div>
+
+  <div class="filterBar">
+    <div class="tabs" id="catTabs">
+      <span class="tab active" data-cat="Alle">Alle</span>
+      <span class="tab" data-cat="iPhone">iPhone</span>
+      <span class="tab" data-cat="iPad">iPad</span>
+      <span class="tab" data-cat="MacBook">MacBook</span>
+      <span class="tab" data-cat="Apple Watch">Apple Watch</span>
+    </div>
+    <div class="filterControls">
+      <input type="search" id="searchInput" placeholder="Zoek een toestel…">
+      <select id="batteryFilter">
+        <option value="0">Batterij: alle</option>
+        <option value="95">95%+</option>
+        <option value="90">90%+</option>
+        <option value="80">80%+</option>
+      </select>
+      <select id="storageFilter">
+        <option value="">Opslag: alle</option>
+        <option value="64">64GB</option>
+        <option value="128">128GB</option>
+        <option value="256">256GB</option>
+        <option value="512">512GB</option>
+      </select>
+      <select id="priceFilter">
+        <option value="">Prijs: alle</option>
+        <option value="0-600">Tot € 600</option>
+        <option value="600-800">€ 600 – € 800</option>
+        <option value="800-99999">€ 800+</option>
+      </select>
+    </div>
   </div>
-  <div class="snapdots"><span></span><span></span><span></span><span></span></div>
+
+  <div class="products" id="productGrid"></div>
+  <p class="noResults" id="noResults" style="display:none">Geen toestellen gevonden met deze filters.</p>
 </div></section>
 
 <section><div class="wrap reveal">
@@ -90,7 +117,7 @@
       <div class="eye">Inruilservice</div>
       <h2>Je oude iPhone inruilen?</h2>
       <p class="lead" style="font-size:16px">Ontvang een eerlijke inruilwaarde en gebruik het bedrag direct voor je volgende toestel.</p>
-      <a class="btn primary" style="margin-top:20px">Start inruilwaarde →</a>
+      <a class="btn primary js-tradein-trigger" href="#" style="margin-top:20px">Start inruilwaarde →</a>
     </div>
     <img src="images/tradein.jpg" alt="Apple producten inruilen bij iSelectStore">
   </div>
@@ -126,7 +153,59 @@
   <div class="finePrint">De waardering van iselectstore.nl bij WebwinkelKeur Reviews is 9,8/10 gebaseerd op 607 reviews.<br>Copyright © 2026 iSelectStore · KVK 84268891 · BTW NL003937269B13</div>
 </div></footer>
 
+<script src="products.js"></script>
 <script src="cart.js"></script>
 <script src="main.js"></script>
+<script src="tradein.js"></script>
+<script>
+var activeCat='Alle';
+function applyFilters(){
+  var q=document.getElementById('searchInput').value.trim().toLowerCase();
+  var minBattery=parseInt(document.getElementById('batteryFilter').value||0,10);
+  var storage=document.getElementById('storageFilter').value;
+  var priceRange=document.getElementById('priceFilter').value;
+
+  var list=window.PRODUCTS.filter(function(p){
+    if(activeCat!=='Alle' && p.category!==activeCat) return false;
+    if(q && p.title.toLowerCase().indexOf(q)===-1) return false;
+    if(minBattery && p.battery<minBattery) return false;
+    if(storage && String(p.storage)!==storage) return false;
+    if(priceRange){
+      var parts=priceRange.split('-').map(Number);
+      if(p.price<parts[0] || p.price>parts[1]) return false;
+    }
+    return true;
+  });
+
+  var grid=document.getElementById('productGrid');
+  var noRes=document.getElementById('noResults');
+  if(!list.length){
+    grid.style.display='none';
+    noRes.style.display='block';
+  }else{
+    grid.style.display='';
+    noRes.style.display='none';
+    grid.innerHTML=list.map(window.renderProductCard).join('');
+  }
+}
+
+document.querySelectorAll('#catTabs .tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    document.querySelectorAll('#catTabs .tab').forEach(function(x){x.classList.remove('active')});
+    t.classList.add('active');
+    activeCat=t.dataset.cat;
+    applyFilters();
+  });
+});
+['searchInput'].forEach(function(id){ document.getElementById(id).addEventListener('input',applyFilters); });
+['batteryFilter','storageFilter','priceFilter'].forEach(function(id){ document.getElementById(id).addEventListener('change',applyFilters); });
+applyFilters();
+
+document.getElementById('searchIcon').addEventListener('click',function(){
+  var input=document.getElementById('searchInput');
+  document.getElementById('producten').scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(function(){ input.focus(); },400);
+});
+</script>
 </body>
 </html>

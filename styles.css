@@ -101,10 +101,17 @@ h2{font-size:clamp(27px,4vw,40px);letter-spacing:-.025em;margin:0 0 6px;font-wei
 .catcopy b{font-size:20px;display:block;font-weight:700;letter-spacing:-.01em}
 .catcopy span{font-size:12.5px;color:rgba(255,255,255,.85);display:inline-flex;align-items:center;gap:6px;margin-top:2px}
 
-.tabs{display:flex;gap:8px;border:1px solid var(--line);background:var(--soft);padding:4px;border-radius:980px;margin-bottom:32px;width:fit-content;max-width:100%;overflow-x:auto;scrollbar-width:none}
+.tabs{display:flex;gap:8px;border:1px solid var(--line);background:var(--soft);padding:4px;border-radius:980px;margin-bottom:0;width:fit-content;max-width:100%;overflow-x:auto;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
 .tab{padding:9px 18px;color:var(--muted);white-space:nowrap;border-radius:980px;font-size:13.5px;font-weight:600;cursor:pointer;transition:background .2s,color .2s;flex:none}
 .tab.active{color:#fff;background:var(--coral)}
+
+.filterBar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-bottom:28px}
+.filterControls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.filterControls input,.filterControls select{padding:10px 16px;border:1.5px solid var(--line);border-radius:980px;font-family:inherit;font-size:13px;color:var(--navy);background:#fff;cursor:pointer}
+.filterControls input{min-width:190px;cursor:text}
+.filterControls input:focus,.filterControls select:focus{outline:none;border-color:var(--coral)}
+.noResults{text-align:center;color:var(--muted);padding:50px 0;font-size:15px}
 
 .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .card{border:1px solid var(--line);border-radius:22px;padding:16px;position:relative;background:#fff;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
@@ -284,6 +291,20 @@ footer{border-top:1px solid var(--line);padding:56px 0 34px;background:var(--ivo
 .orderDone p{color:var(--muted);font-size:15px;margin:0 0 4px}
 .orderDone .orderNum{color:var(--navy);font-weight:700}
 
+/* Trade-in estimator modal */
+.tiOverlay{position:fixed;inset:0;background:rgba(31,48,73,.55);backdrop-filter:blur(4px);z-index:100;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility 0s .3s;padding:20px}
+.tiOverlay.open{opacity:1;visibility:visible;transition:opacity .3s var(--ease)}
+.tiModal{background:#fff;border-radius:24px;padding:32px;max-width:460px;width:100%;position:relative;max-height:86vh;overflow:auto}
+.tiClose{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;border:0;background:var(--soft);font-size:18px;line-height:1;color:var(--navy);cursor:pointer}
+.tiEyebrow{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--coral-ink);margin:0 0 8px}
+.tiModal h3{margin:0 0 22px;font-size:19px;color:var(--navy);padding-right:20px}
+.tiGrid{display:flex;flex-direction:column;gap:10px;margin-bottom:4px}
+.tiOption{text-align:left;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;background:#fff;font-family:inherit;font-size:14px;font-weight:600;color:var(--navy);cursor:pointer;transition:border-color .2s,background .2s}
+.tiOption:hover{border-color:var(--coral);background:#fdeceb}
+.tiBack{margin-top:16px;background:none;border:0;color:var(--muted);font-size:13px;cursor:pointer;text-decoration:underline;padding:0}
+.tiEstimate{font-size:44px;font-weight:800;color:var(--coral-ink);margin:6px 0 14px}
+.tiNote{color:var(--muted);font-size:13.5px;line-height:1.6;margin:0 0 22px}
+
 @media(max-width:900px){
  .links{display:none}
  .burger{display:block}
@@ -315,6 +336,10 @@ footer{border-top:1px solid var(--line);padding:56px 0 34px;background:var(--ivo
  .mnav a{font-size:26px}
  .specs{grid-template-columns:1fr}
  .formGrid{grid-template-columns:1fr}
+ .filterBar{flex-direction:column;align-items:stretch}
+ .filterControls{overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px}
+ .filterControls input{min-width:150px}
+ .tiModal{padding:26px 22px}
  .buyRow{flex-direction:column}.buyRow .qty{align-self:flex-start}
  .mobileBuy{display:flex}
  .pdp{padding-bottom:76px}
