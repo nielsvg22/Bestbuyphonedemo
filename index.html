@@ -73,7 +73,6 @@
       <span class="tab" data-cat="Apple Watch">Apple Watch</span>
     </div>
     <div class="filterControls">
-      <input type="search" id="searchInput" placeholder="Zoek een toestel…">
       <select id="batteryFilter">
         <option value="0">Batterij: alle</option>
         <option value="95">95%+</option>
@@ -179,15 +178,14 @@
 <script src="tradein.js"></script>
 <script>
 var activeCat='Alle';
+var HOME_LIMIT=4;
 function applyFilters(){
-  var q=document.getElementById('searchInput').value.trim().toLowerCase();
   var minBattery=parseInt(document.getElementById('batteryFilter').value||0,10);
   var storage=document.getElementById('storageFilter').value;
   var priceRange=document.getElementById('priceFilter').value;
 
   var list=window.PRODUCTS.filter(function(p){
     if(activeCat!=='Alle' && p.category!==activeCat) return false;
-    if(q && p.title.toLowerCase().indexOf(q)===-1) return false;
     if(minBattery && p.battery<minBattery) return false;
     if(storage && String(p.storage)!==storage) return false;
     if(priceRange){
@@ -195,7 +193,7 @@ function applyFilters(){
       if(p.price<parts[0] || p.price>parts[1]) return false;
     }
     return true;
-  });
+  }).slice(0,HOME_LIMIT);
 
   var grid=document.getElementById('productGrid');
   var noRes=document.getElementById('noResults');
@@ -217,14 +215,11 @@ document.querySelectorAll('#catTabs .tab').forEach(function(t){
     applyFilters();
   });
 });
-['searchInput'].forEach(function(id){ document.getElementById(id).addEventListener('input',applyFilters); });
 ['batteryFilter','storageFilter','priceFilter'].forEach(function(id){ document.getElementById(id).addEventListener('change',applyFilters); });
 applyFilters();
 
 document.getElementById('searchIcon').addEventListener('click',function(){
-  var input=document.getElementById('searchInput');
-  document.getElementById('producten').scrollIntoView({behavior:'smooth',block:'start'});
-  setTimeout(function(){ input.focus(); },400);
+  window.location.href='shop.html';
 });
 </script>
 </body>
