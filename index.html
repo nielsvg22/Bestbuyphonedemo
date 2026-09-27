@@ -99,6 +99,11 @@ h2{font-size:clamp(27px,4vw,40px);letter-spacing:-.03em;margin:0 0 6px;font-weig
 .catcopy{position:absolute;left:0;right:0;bottom:0;padding:54px 20px 20px;background:linear-gradient(transparent,rgba(0,0,0,.75) 75%);color:#fff}
 .catcopy b{font-size:20px;display:block;font-weight:600;letter-spacing:-.01em}
 .catcopy span{font-size:12.5px;color:rgba(255,255,255,.82);display:inline-flex;align-items:center;gap:6px;margin-top:2px}
+.cat-soon{background:linear-gradient(150deg,#1d1d1f,#3a3a3d)}
+.cat-soon .catIcon{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.16)}
+.cat-soon .catIcon svg{width:40%;height:40%}
+.catcopy.static{background:linear-gradient(transparent,rgba(0,0,0,.55) 75%)}
+.catcopy.static span{color:rgba(255,255,255,.65)}
 
 .tabs{display:flex;gap:8px;border:1px solid var(--line);background:var(--soft);padding:4px;border-radius:980px;margin-bottom:32px;width:fit-content;max-width:100%;overflow-x:auto;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
@@ -219,7 +224,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 34px;background:#fafafa}
   <div class="cats" id="catScroll">
     <a class="cat"><img src="images/iphone_cat.jpg" alt="Apple iPhone"><div class="catcopy"><b>Apple iPhone</b><span>Winkel nu →</span></div></a>
     <a class="cat"><img src="images/ipad.jpg" alt="Apple iPad"><div class="catcopy"><b>Tablets | Apple iPad</b><span>Winkel nu →</span></div></a>
-    <a class="cat"><img src="images/macbook.jpg" alt="Apple MacBook"><div class="catcopy"><b>Apple MacBooks</b><span>Winkel nu →</span></div></a>
+    <a class="cat cat-soon"><div class="catIcon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 18h20l-1.5 2.2a1 1 0 0 1-.83.44H4.33a1 1 0 0 1-.83-.44L2 18z"/></svg></div><div class="catcopy static"><b>Apple MacBooks</b><span>Binnenkort beschikbaar</span></div></a>
     <a class="cat"><img src="images/watch.jpg" alt="Apple Watch"><div class="catcopy"><b>Smartwatches</b><span>Winkel nu →</span></div></a>
   </div>
   <div class="snapdots"><span></span><span></span><span></span><span></span></div>
