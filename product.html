@@ -66,26 +66,32 @@
       </div>
 
       <div class="optionGroup">
-        <label>Kleur</label>
-        <div class="swatches">
-          <span class="swatch active">Zwart</span>
-          <span class="swatch">Titanium</span>
-          <span class="swatch">Wit</span>
+        <label>Accessoires toevoegen</label>
+        <div class="accessories">
+          <label class="accessory">
+            <input type="checkbox" data-price="15">
+            <span class="accCheck"></span>
+            <span class="accInfo"><b>Glazen screenprotector</b><small>Kwaliteit glas, professioneel op je iPhone aangebracht</small></span>
+            <span class="accPrice">+ € 15,00</span>
+          </label>
+          <label class="accessory">
+            <input type="checkbox" data-price="12.50">
+            <span class="accCheck"></span>
+            <span class="accInfo"><b>Extra Apple oplaadkabel</b><small>Originele bijbehorende oplaadkabel</small></span>
+            <span class="accPrice">+ € 12,50</span>
+          </label>
+          <label class="accessory">
+            <input type="checkbox" data-price="15">
+            <span class="accCheck"></span>
+            <span class="accInfo"><b>Apple USB-C adapter</b><small>Originele bijbehorende stroomadapter</small></span>
+            <span class="accPrice">+ € 15,00</span>
+          </label>
         </div>
-      </div>
-
-      <div class="optionGroup">
-        <label>Opslagcapaciteit</label>
-        <div class="swatches">
-          <span class="swatch">128GB</span>
-          <span class="swatch active">256GB</span>
-          <span class="swatch">512GB</span>
-        </div>
+        <div class="accTotal">Totaal incl. accessoires: <b class="js-total">€ 579,-</b></div>
       </div>
 
       <div class="buyRow">
-        <div class="qty"><button aria-label="Minder">−</button><span>1</span><button aria-label="Meer">+</button></div>
-        <button class="add">In winkelwagen — € 579,-</button>
+        <button class="add">In winkelwagen — <span class="js-total-inline">€ 579,-</span></button>
       </div>
       <a class="btn" style="width:100%;margin-bottom:26px" href="#">Start inruilwaarde voor je oude toestel →</a>
 
@@ -140,7 +146,7 @@
 <div class="patternBand"></div>
 
 <div class="mobileBuy" id="mobileBuy">
-  <div class="mbPrice"><b>€ 579,-</b><span>€ 679,-</span></div>
+  <div class="mbPrice"><b class="js-total">€ 579,-</b><span>€ 679,-</span></div>
   <button class="add">In winkelwagen</button>
 </div>
 
@@ -164,23 +170,22 @@ document.querySelectorAll('.thumb').forEach(function(t){
   });
 });
 
-document.querySelectorAll('.optionGroup .swatches').forEach(function(group){
-  group.querySelectorAll('.swatch').forEach(function(s){
-    s.addEventListener('click',function(){
-      group.querySelectorAll('.swatch').forEach(function(x){x.classList.remove('active')});
-      s.classList.add('active');
-    });
-  });
-});
-
-var qty=document.querySelector('.qty span');
-document.querySelectorAll('.qty button').forEach(function(b,i){
-  b.addEventListener('click',function(){
-    var v=parseInt(qty.textContent,10);
-    v=i===0?Math.max(1,v-1):v+1;
-    qty.textContent=v;
-  });
-});
+var basePrice=579;
+var accChecks=document.querySelectorAll('.accessory input');
+function fmt(n){
+  var cents=Math.round(n*100)%100;
+  if(cents===0) return '€ '+Math.round(n)+',-';
+  return '€ '+n.toFixed(2).replace('.',',');
+}
+function updateTotal(){
+  var total=basePrice;
+  accChecks.forEach(function(cb){ if(cb.checked) total+=parseFloat(cb.dataset.price); });
+  var text=fmt(total);
+  document.querySelectorAll('.js-total').forEach(function(el){ el.textContent=text; });
+  document.querySelectorAll('.js-total-inline').forEach(function(el){ el.textContent=text; });
+}
+accChecks.forEach(function(cb){ cb.addEventListener('change',updateTotal); });
+updateTotal();
 
 document.querySelectorAll('.accHead').forEach(function(h){
   h.addEventListener('click',function(){
