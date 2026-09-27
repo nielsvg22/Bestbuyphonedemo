@@ -3,43 +3,50 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#000000">
-<title>BestBuyPhone — Premium Pre-owned Apple</title>
+<meta name="theme-color" content="#1f3049">
+<title>iSelectStore — Only the good ones.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --blue:#0071e3;--blue-ink:#0058b0;--ink:#1d1d1f;--muted:#6e6e73;--line:#e8e8ed;--soft:#f5f5f7;
+  --navy:#1f3049;--coral:#f9858b;--coral-ink:#ef6570;--ivory:#f7f7f7;--anthracite:#25292d;
+  --ink:#25292d;--muted:#6b7280;--line:#e7e9ec;--soft:#f7f7f7;
   --max:1260px;--ease:cubic-bezier(.22,1,.36,1);--header-h:52px
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Arial,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+body{margin:0;font-family:'Poppins',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
 body.locked{overflow:hidden}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 button{font:inherit}
-::selection{background:rgba(0,113,227,.18)}
+::selection{background:rgba(249,133,139,.25)}
 
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 
-.top{background:#000;color:#f5f5f7;font-size:12px;overflow:hidden;letter-spacing:.01em;position:relative}
+.mark{flex:none;display:block}
+.mark path{fill:var(--coral)}
+
+.top{background:var(--navy);color:#fdf5f4;font-size:12px;overflow:hidden;letter-spacing:.01em;position:relative}
 .topin{max-width:var(--max);margin:auto;padding:10px 18px;display:flex;gap:34px;justify-content:center;font-weight:500;white-space:nowrap;overflow-x:auto;scrollbar-width:none}
 .topin::-webkit-scrollbar{display:none}
 .topin span{opacity:.92;display:flex;align-items:center;gap:6px;flex:none}
-.topin span::before{content:'';width:5px;height:5px;border-radius:50%;background:#42d477;flex:none}
+.topin span::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--coral);flex:none}
 
-header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06);transition:box-shadow .3s}
-header.scrolled{box-shadow:0 1px 0 rgba(0,0,0,.05),0 8px 24px -12px rgba(0,0,0,.08)}
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(31,48,73,.08);transition:box-shadow .3s}
+header.scrolled{box-shadow:0 1px 0 rgba(31,48,73,.06),0 8px 24px -12px rgba(31,48,73,.12)}
 .nav{max-width:var(--max);margin:auto;height:var(--header-h);padding:0 22px;display:flex;align-items:center;gap:30px}
-.logo{display:flex;align-items:center;gap:9px;color:var(--ink);flex:none}
-.logo img{height:26px;width:auto;display:block}
-.links{display:flex;gap:34px;justify-content:center;flex:1;font-size:13px;font-weight:400;color:#1d1d1f}
-.links a{opacity:.88;transition:opacity .2s}.links a:hover{opacity:1}
-.icons{display:flex;gap:20px;align-items:center;color:#1d1d1f}
+.logo{display:flex;align-items:center;gap:9px;color:var(--navy);flex:none;font-weight:800;font-size:19px;letter-spacing:-.01em}
+.logo .mark{width:20px;height:20px}
+.links{display:flex;gap:34px;justify-content:center;flex:1;font-size:13px;font-weight:500;color:var(--navy)}
+.links a{opacity:.85;transition:opacity .2s}.links a:hover{opacity:1}
+.icons{display:flex;gap:20px;align-items:center;color:var(--navy)}
 .ic{width:18px;height:18px;display:grid;place-items:center;opacity:.85;cursor:pointer;transition:opacity .2s,transform .2s;background:none;border:0;padding:0;color:inherit}
 .ic:hover{opacity:1;transform:scale(1.08)}
 .burger{display:none;width:22px;height:16px;position:relative;background:none;border:0;padding:0;cursor:pointer;flex:none}
-.burger span{position:absolute;left:0;right:0;height:2px;background:#1d1d1f;border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
+.burger span{position:absolute;left:0;right:0;height:2px;background:var(--navy);border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
 .burger span:nth-child(1){top:0}.burger span:nth-child(2){top:7px}.burger span:nth-child(3){top:14px}
 .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
@@ -48,109 +55,115 @@ header.scrolled{box-shadow:0 1px 0 rgba(0,0,0,.05),0 8px 24px -12px rgba(0,0,0,.
 .mnav{position:fixed;inset:0;z-index:55;background:rgba(255,255,255,.98);backdrop-filter:blur(30px);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;
   opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .35s var(--ease),transform .35s var(--ease),visibility 0s .35s}
 .mnav.open{opacity:1;visibility:visible;transform:none;transition:opacity .35s var(--ease),transform .35s var(--ease)}
-.mnav a{font-size:30px;font-weight:600;letter-spacing:-.02em;color:#1d1d1f;padding:14px 0}
+.mnav a{font-size:30px;font-weight:600;letter-spacing:-.02em;color:var(--navy);padding:14px 0}
 .mnav .primary{margin-top:22px;padding:16px 34px;font-size:16px}
 
-.hero{background:radial-gradient(circle at 18% 20%,#fbfbfd 0%,#f5f5f7 45%,#eef0f3 100%);position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(600px 300px at 85% 15%,rgba(0,113,227,.08),transparent 70%)}
+.hero{background:radial-gradient(circle at 18% 20%,#fbfbfd 0%,var(--ivory) 45%,#eef0f3 100%);position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(600px 300px at 85% 15%,rgba(249,133,139,.14),transparent 70%)}
 .heroIn{max-width:var(--max);margin:auto;min-height:620px;padding:clamp(44px,8vw,70px) 22px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;position:relative}
-.eye{font-size:13px;letter-spacing:.14em;font-weight:600;color:var(--blue);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
-.eye::before{content:'';width:22px;height:1px;background:var(--blue)}
-h1{font-size:clamp(38px,6vw,68px);line-height:1.03;letter-spacing:-.035em;margin:0 0 22px;font-weight:600;color:#1d1d1f}
-h1 span{background:linear-gradient(100deg,#0071e3,#42a1ff 55%,#0071e3);background-clip:text;-webkit-background-clip:text;color:transparent}
+.eye{font-size:13px;letter-spacing:.14em;font-weight:600;color:var(--coral-ink);margin-bottom:18px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.eye::before{content:'';width:22px;height:1px;background:var(--coral-ink)}
+h1{font-size:clamp(38px,6vw,66px);line-height:1.05;letter-spacing:-.03em;margin:0 0 22px;font-weight:700;color:var(--navy)}
+h1 span{color:var(--coral)}
 .lead{font-size:clamp(16px,2.4vw,19px);line-height:1.6;color:var(--muted);max-width:540px;font-weight:400}
 .ctas{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
-.btn{padding:15px 26px;border:1px solid rgba(0,0,0,.12);border-radius:980px;font-weight:600;font-size:15px;display:inline-flex;justify-content:center;align-items:center;gap:8px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s;background:#fff;color:#1d1d1f;white-space:nowrap}
+.btn{padding:15px 26px;border:1px solid rgba(31,48,73,.14);border-radius:980px;font-weight:600;font-size:15px;display:inline-flex;justify-content:center;align-items:center;gap:8px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s;background:#fff;color:var(--navy);white-space:nowrap}
 .btn:active{transform:scale(.97)}
-.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(0,0,0,.18)}
-.primary{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 8px 20px -8px rgba(0,113,227,.55)}
-.primary:hover{background:var(--blue-ink);border-color:var(--blue-ink);box-shadow:0 12px 28px -8px rgba(0,113,227,.6)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(31,48,73,.18)}
+.primary{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 8px 20px -8px rgba(249,133,139,.55)}
+.primary:hover{background:var(--coral-ink);border-color:var(--coral-ink);box-shadow:0 12px 28px -8px rgba(249,133,139,.6)}
 .rating{display:flex;gap:12px;margin-top:30px;align-items:center;font-size:14px;color:var(--muted);flex-wrap:wrap}
-.rating b{color:#1d1d1f}
-.stars{color:#ff9f0a;letter-spacing:2px}
+.rating b{color:var(--navy)}
+.stars{color:var(--coral);letter-spacing:2px}
 .heroImg{display:flex;justify-content:center;perspective:1200px}
-.heroImg img{width:min(540px,94%);aspect-ratio:1;object-fit:cover;border-radius:32px;box-shadow:0 40px 80px -20px rgba(0,0,0,.28),0 10px 30px -10px rgba(0,0,0,.12);transition:transform .6s var(--ease);will-change:transform}
+.heroImg img{width:min(540px,94%);aspect-ratio:1;object-fit:cover;border-radius:32px;box-shadow:0 40px 80px -20px rgba(31,48,73,.32),0 10px 30px -10px rgba(31,48,73,.14);transition:transform .6s var(--ease);will-change:transform}
 .heroImg:hover img{transform:rotateY(-4deg) rotateX(2deg) scale(1.015)}
 
 .wrap{max-width:var(--max);margin:auto;padding:0 22px}
 
-.trust{border-block:1px solid var(--line);background:#fafafa}
-.trustgrid{display:grid;grid-template-columns:repeat(4,1fr)}
-.trustitem{display:flex;gap:14px;align-items:center;padding:28px 18px;border-right:1px solid var(--line)}
+.trust{border-block:1px solid var(--line);background:var(--ivory)}
+.trustgrid{display:grid;grid-template-columns:repeat(6,1fr)}
+.trustitem{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:28px 12px;border-right:1px solid var(--line)}
 .trustitem:last-child{border-right:0}
-.bubble{width:44px;height:44px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06);flex:none}
+.bubble{width:44px;height:44px;border-radius:50%;background:#fff;color:var(--coral);display:grid;place-items:center;box-shadow:0 2px 8px rgba(31,48,73,.08);flex:none}
 .bubble svg{width:20px;height:20px}
-.trustitem b{display:block;font-size:14px;font-weight:600;color:#1d1d1f}
-.trustitem small{color:var(--muted);font-size:12.5px}
+.trustitem b{display:block;font-size:12.5px;font-weight:600;color:var(--navy);line-height:1.3}
+.trustitem small{color:var(--muted);font-size:11px}
 
 section{padding:clamp(56px,9vw,96px) 0}
 .head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:36px;flex-wrap:wrap}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:0 0 10px}
-h2{font-size:clamp(27px,4vw,40px);letter-spacing:-.03em;margin:0 0 6px;font-weight:600;color:#1d1d1f}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--coral-ink);margin:0 0 10px}
+h2{font-size:clamp(27px,4vw,40px);letter-spacing:-.025em;margin:0 0 6px;font-weight:700;color:var(--navy)}
 .sub{color:var(--muted);margin:0;font-size:16px}
-.link{color:var(--blue);font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
+.link{color:var(--coral-ink);font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
 .link:hover{gap:10px}
 
 .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .cat{position:relative;overflow:hidden;border-radius:24px;min-height:320px;background:var(--soft);border:1px solid var(--line);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
-.cat:hover{transform:translateY(-6px);box-shadow:0 24px 40px -20px rgba(0,0,0,.25)}
+.cat:hover{transform:translateY(-6px);box-shadow:0 24px 40px -20px rgba(31,48,73,.28)}
 .cat img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
 .cat:hover img{transform:scale(1.06)}
-.catcopy{position:absolute;left:0;right:0;bottom:0;padding:54px 20px 20px;background:linear-gradient(transparent,rgba(0,0,0,.75) 75%);color:#fff}
-.catcopy b{font-size:20px;display:block;font-weight:600;letter-spacing:-.01em}
-.catcopy span{font-size:12.5px;color:rgba(255,255,255,.82);display:inline-flex;align-items:center;gap:6px;margin-top:2px}
-.cat-soon{background:linear-gradient(150deg,#1d1d1f,#3a3a3d)}
-.cat-soon .catIcon{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.16)}
+.catcopy{position:absolute;left:0;right:0;bottom:0;padding:54px 20px 20px;background:linear-gradient(transparent,rgba(31,48,73,.8) 75%);color:#fff}
+.catcopy b{font-size:20px;display:block;font-weight:700;letter-spacing:-.01em}
+.catcopy span{font-size:12.5px;color:rgba(255,255,255,.85);display:inline-flex;align-items:center;gap:6px;margin-top:2px}
+.cat-soon{background:linear-gradient(150deg,var(--navy),#33475f)}
+.cat-soon .catIcon{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.18)}
 .cat-soon .catIcon svg{width:40%;height:40%}
-.catcopy.static{background:linear-gradient(transparent,rgba(0,0,0,.55) 75%)}
-.catcopy.static span{color:rgba(255,255,255,.65)}
+.catcopy.static{background:linear-gradient(transparent,rgba(31,48,73,.6) 75%)}
+.catcopy.static span{color:rgba(255,255,255,.7)}
 
 .tabs{display:flex;gap:8px;border:1px solid var(--line);background:var(--soft);padding:4px;border-radius:980px;margin-bottom:32px;width:fit-content;max-width:100%;overflow-x:auto;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
 .tab{padding:9px 18px;color:var(--muted);white-space:nowrap;border-radius:980px;font-size:13.5px;font-weight:600;cursor:pointer;transition:background .2s,color .2s;flex:none}
-.tab.active{color:#fff;background:#1d1d1f}
+.tab.active{color:#fff;background:var(--navy)}
 
 .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .card{border:1px solid var(--line);border-radius:22px;padding:16px;position:relative;background:#fff;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
-.card:hover{transform:translateY(-6px);box-shadow:0 26px 44px -22px rgba(0,0,0,.22);border-color:transparent}
+.card:hover{transform:translateY(-6px);box-shadow:0 26px 44px -22px rgba(31,48,73,.24);border-color:transparent}
 .card>img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;background:#f6f6f6}
-.heart{position:absolute;right:22px;top:22px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.1);transition:transform .2s,color .2s;color:#1d1d1f;border:0}
-.heart:hover{transform:scale(1.12);color:#ff375f}
-.badge{display:inline-flex;align-items:center;gap:5px;margin:13px 0 9px;background:#e6f8ec;color:#1a7e3c;padding:5px 10px;border-radius:999px;font-size:11px;font-weight:700;width:fit-content}
+.heart{position:absolute;right:22px;top:22px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);display:grid;place-items:center;box-shadow:0 2px 8px rgba(31,48,73,.12);transition:transform .2s,color .2s;color:var(--navy);border:0}
+.heart:hover{transform:scale(1.12);color:var(--coral)}
+.badge{display:inline-flex;align-items:center;gap:5px;margin:13px 0 9px;background:#fdeceb;color:var(--coral-ink);padding:5px 10px;border-radius:999px;font-size:11px;font-weight:700;width:fit-content}
 .badge::before{content:'●';font-size:7px}
-.card h3{font-size:16.5px;line-height:1.3;margin:0 0 4px;font-weight:600;letter-spacing:-.01em}
+.card h3{font-size:16.5px;line-height:1.3;margin:0 0 4px;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
 .meta{color:var(--muted);font-size:12.5px}
 .price{display:flex;gap:9px;align-items:baseline;margin:11px 0 14px}
-.price b{font-size:22px;font-weight:700;letter-spacing:-.01em}
+.price b{font-size:22px;font-weight:700;letter-spacing:-.01em;color:var(--navy)}
 .old{font-size:12.5px;text-decoration:line-through;color:#9ca2aa}
-.add{margin-top:auto;border:0;border-radius:980px;padding:13px;background:#1d1d1f;color:#fff;font-weight:600;font-size:14px;cursor:pointer;transition:background .2s,transform .2s}
-.add:hover{background:var(--blue);transform:translateY(-1px)}
+.add{margin-top:auto;border:0;border-radius:980px;padding:13px;background:var(--navy);color:#fff;font-weight:600;font-size:14px;cursor:pointer;transition:background .2s,transform .2s}
+.add:hover{background:var(--coral);transform:translateY(-1px)}
 
 .snapdots{display:none;justify-content:center;gap:6px;margin-top:14px}
 .snapdots span{width:6px;height:6px;border-radius:50%;background:var(--line)}
-.snapdots span:first-child{background:#1d1d1f;width:16px;border-radius:4px}
+.snapdots span:first-child{background:var(--navy);width:16px;border-radius:4px}
 
-.trade{background:linear-gradient(120deg,#0b0d11,#1d1d1f 60%);border-radius:32px;display:grid;grid-template-columns:1.05fr .95fr;overflow:hidden;align-items:center;position:relative}
-.trade::before{content:'';position:absolute;inset:0;background:radial-gradient(500px 260px at 10% 20%,rgba(0,113,227,.35),transparent 70%)}
+.promo{background:linear-gradient(120deg,var(--navy),#2c4262 65%);border-radius:32px;display:grid;grid-template-columns:1.1fr .9fr;overflow:hidden;align-items:center;position:relative}
+.promo::before{content:'';position:absolute;inset:0;background:radial-gradient(60px 60px at 92% 12%,rgba(249,133,139,.5),transparent 70%),radial-gradient(500px 260px at 0% 100%,rgba(249,133,139,.18),transparent 70%)}
+.promocopy{padding:clamp(30px,5vw,56px);position:relative;color:#fff}
+.promocopy h2{font-size:clamp(32px,5vw,52px);color:var(--coral);font-weight:800;line-height:1.05;margin:0 0 14px}
+.promocopy p{color:rgba(255,255,255,.78);font-size:17px;line-height:1.6;margin:0 0 26px;max-width:420px}
+.promo img{width:100%;height:380px;object-fit:cover}
+
+.trade{background:linear-gradient(120deg,var(--navy),#2c4262 60%);border-radius:32px;display:grid;grid-template-columns:1.05fr .95fr;overflow:hidden;align-items:center;position:relative}
+.trade::before{content:'';position:absolute;inset:0;background:radial-gradient(500px 260px at 10% 20%,rgba(249,133,139,.28),transparent 70%)}
 .tradecopy{padding:clamp(30px,5vw,56px);position:relative;color:#fff}
-.trade .eye{color:#42a1ff}.trade .eye::before{background:#42a1ff}
+.trade .eye{color:var(--coral)}.trade .eye::before{background:var(--coral)}
 .trade h2{font-size:clamp(28px,4vw,44px);color:#fff}
 .trade .lead{color:rgba(255,255,255,.72)}
 .trade img{width:100%;height:400px;object-fit:cover}
 
 .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .review{border:1px solid var(--line);border-radius:20px;padding:26px;background:#fff;transition:box-shadow .3s,transform .3s}
-.review:hover{box-shadow:0 20px 36px -22px rgba(0,0,0,.2);transform:translateY(-4px)}
+.review:hover{box-shadow:0 20px 36px -22px rgba(31,48,73,.22);transform:translateY(-4px)}
 .review p{color:#3a3d42;line-height:1.6;font-size:15px}
-.review b{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:13.5px;font-weight:600}
-.review b::before{content:'';width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#42a1ff);flex:none}
+.review b{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:13.5px;font-weight:600;color:var(--navy)}
+.review b::before{content:'';width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--coral),#ffb2b6);flex:none}
 
-footer{border-top:1px solid var(--line);padding:56px 0 34px;background:#fafafa}
+footer{border-top:1px solid var(--line);padding:56px 0 34px;background:var(--ivory)}
 .footer{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:34px}
-.footer .logo img{height:20px}
-.footer h4{margin:0 0 14px;font-size:13px;font-weight:700;color:#1d1d1f}
+.footer h4{margin:0 0 14px;font-size:13px;font-weight:700;color:var(--navy)}
 .footer p,.footer a{display:block;color:var(--muted);font-size:13px;line-height:2;margin:0;transition:color .2s}
-.footer a:hover{color:var(--ink)}
+.footer a:hover{color:var(--navy)}
 .finePrint{max-width:var(--max);margin:34px auto 0;padding:20px 22px 0;border-top:1px solid var(--line);color:#9a9a9e;font-size:12px}
 
 @media(max-width:900px){
@@ -159,33 +172,33 @@ footer{border-top:1px solid var(--line);padding:56px 0 34px;background:#fafafa}
  .icons{margin-left:auto}
  .heroIn{grid-template-columns:1fr;text-align:center;min-height:auto;padding-top:56px}
  .lead{margin:auto}.ctas,.rating{justify-content:center}.heroImg{height:min(76vw,440px)}
- .trustgrid{grid-template-columns:1fr 1fr}.trustitem:nth-child(2){border-right:0}
+ .trustgrid{grid-template-columns:repeat(3,1fr)}.trustitem:nth-child(3n){border-right:0}
  .cats{grid-template-columns:1fr 1fr}.products{grid-template-columns:1fr 1fr}
- .trade{grid-template-columns:1fr}.reviews{grid-template-columns:1fr}.footer{grid-template-columns:1fr 1fr}
+ .trade,.promo{grid-template-columns:1fr}.reviews{grid-template-columns:1fr}.footer{grid-template-columns:1fr 1fr}
 }
 @media(max-width:640px){
  .topin{justify-content:flex-start}
  .nav{height:48px;padding:0 16px}
- .logo img{height:22px}
  .heroIn{padding:40px 18px 24px}
  .ctas{flex-direction:column;width:100%}.btn{width:100%}
  .heroImg{height:min(80vw,340px)}.heroImg img{width:88%;border-radius:26px}
  .wrap{padding:0 18px}.head{align-items:flex-start}
- .trustitem{padding:16px 10px;gap:10px}.bubble{width:36px;height:36px}.trustitem b{font-size:11.5px}.trustitem small{font-size:9.5px}
+ .trustgrid{grid-template-columns:repeat(2,1fr)}.trustitem:nth-child(2n){border-right:0}
+ .trustitem{padding:16px 10px;gap:8px}.bubble{width:36px;height:36px}.trustitem b{font-size:11.5px}.trustitem small{font-size:9.5px}
  .cats{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -18px;padding:0 18px 4px}.cat{min-width:78vw;min-height:260px;scroll-snap-align:center}
  .products{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -18px;padding:0 18px 4px;gap:14px}.card{min-width:78vw;scroll-snap-align:center}.card>img{aspect-ratio:1.05/1}
  .snapdots{display:flex}
- .trade{border-radius:24px}.trade img{height:230px}
+ .trade,.promo{border-radius:24px}.trade img,.promo img{height:230px}
  .footer{grid-template-columns:1fr 1fr;text-align:left}
  .mnav a{font-size:26px}
 }
 </style>
 </head>
 <body>
-<div class="top"><div class="topin"><span>Premium pre-owned Apple</span><span>Originele onderdelen</span><span>6–12 maanden garantie</span><span>Transparante batterijconditie</span></div></div>
+<div class="top"><div class="topin"><span>Originele Apple producten</span><span>Exacte batterijconditie</span><span>6–12 maanden garantie</span><span>Inruil mogelijk</span></div></div>
 
 <header id="siteHeader"><div class="nav">
-  <a class="logo"><img src="images/logo.png" alt="BestBuyPhone"></a>
+  <a class="logo"><svg class="mark" viewBox="0 0 24 24"><path d="M12 0c.9 3.2 2 5.6 3.4 7.1C16.9 8.6 19.2 9.7 22.4 10.6c-3.2.9-5.5 2-7 3.5C13.9 15.6 12.8 18 12 21.1c-.8-3.1-1.9-5.5-3.4-7C7.1 12.6 4.8 11.5 1.6 10.6c3.2-.9 5.5-2 7-3.5C10.1 5.6 11.2 3.2 12 0z"/></svg>iSelectStore</a>
   <nav class="links"><a>Home</a><a>Voorraad</a><a>Originele iPhone?</a><a>Veel gestelde vragen</a><a>iPhone verkopen/inruilen</a><a>Contact</a></nav>
   <div class="icons">
     <button class="ic" aria-label="Zoeken">🔍</button>
@@ -203,29 +216,31 @@ footer{border-top:1px solid var(--line);padding:56px 0 34px;background:#fafafa}
 <main>
 <section class="hero"><div class="heroIn">
   <div>
-    <div class="eye">Premium pre-owned Apple</div>
-    <h1>Originele Apple.<br><span>Voor een betere prijs.</span></h1>
-    <p class="lead">Koop scherp geprijsde premium pre-owned originele Apple-producten met volledige transparantie over de conditie en batterijstatus.</p>
-    <div class="ctas"><a class="btn primary" href="#producten">Bekijk nu →</a><a class="btn" href="#categorie">Bekijk categorieën</a></div>
+    <div class="eye">selected by us, ready for you</div>
+    <h1>Only the<br><span>good ones.</span></h1>
+    <p class="lead">Koop scherp geprijsde premium pre-owned originele Apple-producten met volledige transparantie over de conditie en batterijstatus. We already checked it for you.</p>
+    <div class="ctas"><a class="btn primary" href="#producten">Alle iPhones →</a><a class="btn" href="#categorie">Bekijk categorieën</a></div>
     <div class="rating"><span class="stars">★★★★★</span><b>9,8/10</b><span>607 WebwinkelKeur-reviews</span></div>
   </div>
-  <div class="heroImg"><img src="images/hero.jpg" alt="iPhone Air BestBuyPhone"></div>
+  <div class="heroImg"><img src="images/hero.jpg" alt="iPhone Air bij iSelectStore"></div>
 </div></section>
 
 <div class="trust"><div class="wrap trustgrid">
-  <div class="trustitem"><div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"/></svg></div><div><b>Betrouwbaarheid</b><small>Door originele iPhone's</small></div></div>
-  <div class="trustitem"><div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></div><div><b>Beste prijs-kwaliteit</b><small>Zonder concessies</small></div></div>
-  <div class="trustitem"><div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="16" height="8" rx="2"/><path d="M19 10.5h2v3h-2"/></svg></div><div><b>Unieke foto's</b><small>+ batterijconditie</small></div></div>
-  <div class="trustitem"><div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><b>Garantie</b><small>6–12 maanden</small></div></div>
+  <div class="trustitem"><div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"/></svg></div><div><b>Originele Apple producten</b><small>Zorgvuldig geverifieerd</small></div></div>
+  <div class="trustitem"><div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="16" height="8" rx="2"/><path d="M19 10.5h2v3h-2"/></svg></div><div><b>Gedetailleerde productfoto's</b><small>Van wat je koopt</small></div></div>
+  <div class="trustitem"><div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg></div><div><b>Beste prijs, altijd kwaliteit</b><small>Scherp geprijsd, nooit ingeleverd op staat</small></div></div>
+  <div class="trustitem"><div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div><div><b>Exacte batterijconditie</b><small>Per toestel vermeld</small></div></div>
+  <div class="trustitem"><div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v6h6M20 20v-6h-6"/><path d="M20 10a8 8 0 00-14.6-4.5M4 14a8 8 0 0014.6 4.5"/></svg></div><div><b>Inruil mogelijk</b><small>Voor je oude product</small></div></div>
+  <div class="trustitem"><div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><b>6–12 maanden garantie</b><small>Met persoonlijke service</small></div></div>
 </div></div>
 
 <section id="categorie"><div class="wrap reveal">
-  <div class="head"><div><p class="eyebrow">Assortiment</p><h2>Categorieën</h2><p class="sub">Naast het ruime aanbod aan iPhones biedt BestBuyPhone sinds kort ook iPads, MacBooks en Apple Watches.</p></div><a class="link">Bekijk alles →</a></div>
+  <div class="head"><div><p class="eyebrow">Assortiment</p><h2>Categorieën</h2><p class="sub">Naast het ruime aanbod aan iPhones biedt iSelectStore sinds kort ook iPads, MacBooks en Apple Watches.</p></div><a class="link">Bekijk alles →</a></div>
   <div class="cats" id="catScroll">
     <a class="cat"><img src="images/iphone_cat.jpg" alt="Apple iPhone"><div class="catcopy"><b>Apple iPhone</b><span>Winkel nu →</span></div></a>
     <a class="cat"><img src="images/ipad.jpg" alt="Apple iPad"><div class="catcopy"><b>Tablets | Apple iPad</b><span>Winkel nu →</span></div></a>
     <a class="cat cat-soon"><div class="catIcon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 18h20l-1.5 2.2a1 1 0 0 1-.83.44H4.33a1 1 0 0 1-.83-.44L2 18z"/></svg></div><div class="catcopy static"><b>Apple MacBooks</b><span>Binnenkort beschikbaar</span></div></a>
-    <a class="cat"><img src="images/watch.jpg" alt="Apple Watch"><div class="catcopy"><b>Smartwatches</b><span>Winkel nu →</span></div></a>
+    <a class="cat"><img src="images/watch.jpg" alt="Apple Watch"><div class="catcopy"><b>Apple Watch</b><span>Winkel nu →</span></div></a>
   </div>
   <div class="snapdots"><span></span><span></span><span></span><span></span></div>
 </div></section>
@@ -243,6 +258,17 @@ footer{border-top:1px solid var(--line);padding:56px 0 34px;background:#fafafa}
 </div></section>
 
 <section><div class="wrap reveal">
+  <div class="promo">
+    <div class="promocopy">
+      <h2>Only the<br>good ones.</h2>
+      <p>We already checked it for you. Elk toestel is persoonlijk gecontroleerd op staat en batterijconditie, voordat het bij ons in de shop komt.</p>
+      <a class="btn primary">Alle iPhones →</a>
+    </div>
+    <img src="images/iphone3.jpg" alt="iSelectStore gecontroleerd toestel">
+  </div>
+</div></section>
+
+<section><div class="wrap reveal">
   <div class="trade">
     <div class="tradecopy">
       <div class="eye">Inruilservice</div>
@@ -250,16 +276,16 @@ footer{border-top:1px solid var(--line);padding:56px 0 34px;background:#fafafa}
       <p class="lead" style="font-size:16px">Ontvang een eerlijke inruilwaarde en gebruik het bedrag direct voor je volgende toestel.</p>
       <a class="btn primary" style="margin-top:20px">Start inruilwaarde →</a>
     </div>
-    <img src="images/tradein.jpg" alt="Apple producten inruilen">
+    <img src="images/tradein.jpg" alt="Apple producten inruilen bij iSelectStore">
   </div>
 </div></section>
 
-<section style="background:#fafafa"><div class="wrap reveal">
+<section style="background:var(--ivory)"><div class="wrap reveal">
   <div class="head"><div><p class="eyebrow">Reviews</p><h2>Wat vinden onze klanten?</h2><p class="sub">Zie naast onze persoonlijke Google- en WebwinkelKeur-reviews ook onze 1100+ positieve Marktplaats-reviews!</p></div></div>
   <div class="reviews">
     <div class="review"><div class="stars">★★★★★</div><p>"Snelle en vriendelijke service geweldig!!"</p><b>Marco de Kleine</b></div>
     <div class="review"><div class="stars">★★★★★</div><p>"Snelle reactie, plezierig contact en mooie telefoon voor een mooie prijs."</p><b>Aja B</b></div>
-    <div class="review"><div class="stars">★★★★★</div><p>"Heel erg tevreden over onze aankoop (2x iPhone 14 Pro). Twan geeft duidelijk uitleg en verkoopt 100% kwaliteit en is erg vriendelijk en gastvrij."</p><b>Amadee Pelgrim</b></div>
+    <div class="review"><div class="stars">★★★★★</div><p>"Heel erg tevreden over onze aankoop (2x iPhone 14 Pro). Duidelijke uitleg en 100% kwaliteit, erg vriendelijk en gastvrij."</p><b>Amadee Pelgrim</b></div>
     <div class="review"><div class="stars">★★★★★</div><p>"Vriendelijk. Goede service. Goede communicatie."</p><b>Ramon van der Horst</b></div>
     <div class="review"><div class="stars">★★★★★</div><p>"Deal snel geregeld, opgehaald in Apeldoorn. Mooie nieuwe iPad tegen een zeer scherpe prijs! Aardige jongen!!"</p><b>Fred Buitenkamp</b></div>
     <div class="review"><div class="stars">★★★★★</div><p>"Top service, top product en erg betaalbaar. Absolute aanrader."</p><b>Jeroen Dijkman</b></div>
@@ -267,19 +293,19 @@ footer{border-top:1px solid var(--line);padding:56px 0 34px;background:#fafafa}
 </div></section>
 
 <section><div class="wrap reveal">
-  <div class="head"><div><p class="eyebrow">Waarom BestBuyPhone</p><h2>Wat maakt ons uniek?</h2></div></div>
-  <p class="sub" style="max-width:760px;font-size:16px;line-height:1.7">BestBuyPhone biedt een onderscheidend vermogen dat reguliere refurbished concurrenten niet kunnen leveren. We leveren premium pre-owned originele Apple-producten tegen de allerbeste prijs-kwaliteitverhouding, zonder compromissen te sluiten over de staat van het product. Bij ons vindt u geen ongecertificeerde gerepareerde onderdelen, waardoor u kunt vertrouwen op een betrouwbaar en probleemloos gebruik van uw Apple-product. Eén van de voordelen van BestBuyPhone is dat u daadwerkelijk het product kunt zien dat u gaat kopen — geen stockfoto's, maar unieke foto's van de staat van het product, inclusief de batterijconditie.</p>
+  <div class="head"><div><p class="eyebrow">Waarom iSelectStore</p><h2>Wat maakt ons uniek?</h2></div></div>
+  <p class="sub" style="max-width:760px;font-size:16px;line-height:1.7">iSelectStore biedt een onderscheidend vermogen dat reguliere refurbished concurrenten niet kunnen leveren. We leveren premium pre-owned originele Apple-producten tegen de allerbeste prijs-kwaliteitverhouding, zonder compromissen te sluiten over de staat van het product. Bij ons vindt u geen ongecertificeerde gerepareerde onderdelen, waardoor u kunt vertrouwen op een betrouwbaar en probleemloos gebruik van uw Apple-product. Eén van de voordelen van iSelectStore is dat u daadwerkelijk het product kunt zien dat u gaat kopen — geen stockfoto's, maar unieke foto's van de staat van het product, inclusief de batterijconditie. Selected by us, ready for you.</p>
 </div></section>
 </main>
 
 <footer><div class="wrap">
   <div class="footer">
-    <div><a class="logo"><img src="images/logo.png" alt="BestBuyPhone"></a><p style="margin-top:14px">Premium pre-owned originele Apple-producten met volledige transparantie over conditie en batterijstatus.</p></div>
+    <div><a class="logo"><svg class="mark" viewBox="0 0 24 24"><path d="M12 0c.9 3.2 2 5.6 3.4 7.1C16.9 8.6 19.2 9.7 22.4 10.6c-3.2.9-5.5 2-7 3.5C13.9 15.6 12.8 18 12 21.1c-.8-3.1-1.9-5.5-3.4-7C7.1 12.6 4.8 11.5 1.6 10.6c3.2-.9 5.5-2 7-3.5C10.1 5.6 11.2 3.2 12 0z"/></svg>iSelectStore</a><p style="margin-top:14px">Premium pre-owned originele Apple-producten met volledige transparantie over conditie en batterijstatus.</p></div>
     <div><h4>iPhones</h4><a>Voorraad</a><a>Originele iPhone?</a><a>iPhone verkopen/inruilen</a><a>Waardeschatting aanvragen</a></div>
     <div><h4>Informatie</h4><a>BLOG</a><a>Homepage</a><a>Contact</a><a>Veel gestelde vragen</a><a>Algemene voorwaarden</a><a>Privacyverklaring</a><a>Retourvoorwaarden</a><a>Klachten</a></div>
-    <div><h4>Contact</h4><p>+31 6 43295022</p><p>info@bestbuyphone.nl</p><p>Oude Apeldoornseweg 45-067<br>7333 NR Apeldoorn<br>(open op afspraak)</p></div>
+    <div><h4>Contact</h4><p>+31 6 43295022</p><p>info@iselectstore.nl</p><p>Oude Apeldoornseweg 45-067<br>7333 NR Apeldoorn<br>(open op afspraak)</p></div>
   </div>
-  <div class="finePrint">De waardering van bestbuyphone.nl bij WebwinkelKeur Reviews is 9,8/10 gebaseerd op 607 reviews.<br>Copyright © 2026 BestBuyPhone · KVK 84268891 · BTW NL003937269B13</div>
+  <div class="finePrint">De waardering van iselectstore.nl bij WebwinkelKeur Reviews is 9,8/10 gebaseerd op 607 reviews.<br>Copyright © 2026 iSelectStore · KVK 84268891 · BTW NL003937269B13</div>
 </div></footer>
 
 <script>
@@ -306,11 +332,6 @@ var io=new IntersectionObserver(function(entries){
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 
-function wireDots(scrollId,dotsSelector){
-  var scroller=document.getElementById(scrollId);
-  if(!scroller) return;
-  var dots=document.querySelectorAll('#'+scrollId+' ~ '+dotsSelector+' span, '+dotsSelector);
-}
 [['catScroll'],['productScroll']].forEach(function(pair){
   var scroller=document.getElementById(pair[0]);
   if(!scroller) return;
@@ -319,7 +340,7 @@ function wireDots(scrollId,dotsSelector){
   scroller.addEventListener('scroll',function(){
     var idx=Math.round(scroller.scrollLeft/(scroller.firstElementChild.getBoundingClientRect().width+14));
     dots.forEach(function(d,i){
-      d.style.background=i===idx?'#1d1d1f':'';
+      d.style.background=i===idx?'var(--navy)':'';
       d.style.width=i===idx?'16px':'';
     });
   },{passive:true});
