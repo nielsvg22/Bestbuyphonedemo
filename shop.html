@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1f3049">
+<title>Alle voorraad — iSelectStore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="top"><div class="topin"><span>Originele Apple producten</span><span>Exacte batterijconditie</span><span>6–12 maanden garantie</span><span>Inruil mogelijk</span></div></div>
+
+<header id="siteHeader"><div class="nav">
+  <a class="logo" href="index.html"><svg class="mark" viewBox="0 0 24 24"><path d="M12 0c.9 3.2 2 5.6 3.4 7.1C16.9 8.6 19.2 9.7 22.4 10.6c-3.2.9-5.5 2-7 3.5C13.9 15.6 12.8 18 12 21.1c-.8-3.1-1.9-5.5-3.4-7C7.1 12.6 4.8 11.5 1.6 10.6c3.2-.9 5.5-2 7-3.5C10.1 5.6 11.2 3.2 12 0z"/></svg>iSelectStore</a>
+  <nav class="links"><a href="index.html">Home</a><a href="shop.html">Voorraad</a><a>Originele iPhone?</a><a>Veel gestelde vragen</a><a>iPhone verkopen/inruilen</a><a>Contact</a></nav>
+  <div class="icons">
+    <button class="ic" aria-label="Zoeken">🔍</button>
+    <button class="ic" aria-label="Favorieten">♡</button>
+    <a class="ic" href="cart.html" aria-label="Winkelwagen">🛍<span class="count">0</span></a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+<nav class="mnav" id="mnav">
+  <a href="index.html">Home</a><a href="shop.html">Voorraad</a><a>Originele iPhone?</a><a>Veel gestelde vragen</a><a>iPhone verkopen/inruilen</a><a>Contact</a>
+  <a class="btn primary">Bekijk voorraad →</a>
+</nav>
+
+<main>
+<section class="shopHero"><div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:#fff">Voorraad</span></div>
+  <p class="eyebrow">Volledige voorraad</p>
+  <h1>Alle producten</h1>
+  <p>Elk toestel is uniek en persoonlijk gecontroleerd. Filter op categorie, batterijconditie, opslag en prijs om precies te vinden wat je zoekt.</p>
+</div></section>
+
+<section style="padding-top:36px"><div class="wrap">
+  <div class="shopLayout">
+    <aside class="filterSidebar" id="filterSidebar">
+      <button class="filterCloseBtn" id="filterClose">✕ Sluiten</button>
+
+      <div class="filterGroup">
+        <h4>Categorie</h4>
+        <div id="categoryFilters"></div>
+      </div>
+
+      <div class="filterGroup">
+        <h4>Batterijconditie</h4>
+        <div class="rangeRow">
+          <input type="range" id="batteryRange" min="0" max="100" step="5" value="0">
+          <span class="rangeVal" id="batteryVal">Vanaf 0%</span>
+        </div>
+      </div>
+
+      <div class="filterGroup">
+        <h4>Opslag</h4>
+        <div id="storageFilters"></div>
+      </div>
+
+      <div class="filterGroup">
+        <h4>Prijs</h4>
+        <div class="rangeRow">
+          <input type="range" id="priceRange" min="150" max="1400" step="25" value="1400">
+          <span class="rangeVal" id="priceVal">Tot € 1400</span>
+        </div>
+      </div>
+
+      <button class="clearAllBtn" id="clearAll">Wis alle filters</button>
+    </aside>
+
+    <div>
+      <div class="shopToolbar">
+        <input type="search" id="shopSearch" placeholder="Zoek een toestel…" style="padding:10px 16px;border:1.5px solid var(--line);border-radius:980px;font-family:inherit;font-size:13px;min-width:220px">
+        <div class="toolbarRight">
+          <span class="resultCount" id="resultCount"></span>
+          <select class="sortSelect" id="sortSelect">
+            <option value="newest">Sorteer: Nieuwste</option>
+            <option value="price-asc">Prijs laag - hoog</option>
+            <option value="price-desc">Prijs hoog - laag</option>
+            <option value="battery-desc">Batterij hoog - laag</option>
+          </select>
+          <button class="filterToggle" id="filterToggle">Filters</button>
+        </div>
+      </div>
+
+      <div class="activeFilters" id="activeFilters"></div>
+
+      <div class="products" id="shopGrid"></div>
+      <p class="noResults" id="shopNoResults" style="display:none">Geen toestellen gevonden met deze filters.</p>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<div class="patternBand"></div>
+
+<footer><div class="wrap">
+  <div class="footer">
+    <div><a class="logo" href="index.html"><svg class="mark" viewBox="0 0 24 24"><path d="M12 0c.9 3.2 2 5.6 3.4 7.1C16.9 8.6 19.2 9.7 22.4 10.6c-3.2.9-5.5 2-7 3.5C13.9 15.6 12.8 18 12 21.1c-.8-3.1-1.9-5.5-3.4-7C7.1 12.6 4.8 11.5 1.6 10.6c3.2-.9 5.5-2 7-3.5C10.1 5.6 11.2 3.2 12 0z"/></svg>iSelectStore</a><p style="margin-top:14px">Premium pre-owned originele Apple-producten met volledige transparantie over conditie en batterijstatus.</p></div>
+    <div><h4>iPhones</h4><a href="shop.html">Voorraad</a><a>Originele iPhone?</a><a>iPhone verkopen/inruilen</a><a>Waardeschatting aanvragen</a></div>
+    <div><h4>Informatie</h4><a>BLOG</a><a href="index.html">Homepage</a><a>Contact</a><a>Veel gestelde vragen</a><a>Algemene voorwaarden</a><a>Privacyverklaring</a><a>Retourvoorwaarden</a><a>Klachten</a></div>
+    <div><h4>Contact</h4><p>+31 6 43295022</p><p>info@iselectstore.nl</p><p>Oude Apeldoornseweg 45-067<br>7333 NR Apeldoorn<br>(open op afspraak)</p></div>
+  </div>
+  <div class="finePrint">De waardering van iselectstore.nl bij WebwinkelKeur Reviews is 9,8/10 gebaseerd op 607 reviews.<br>Copyright © 2026 iSelectStore · KVK 84268891 · BTW NL003937269B13</div>
+</div></footer>
+
+<script src="products.js"></script>
+<script src="cart.js"></script>
+<script src="main.js"></script>
+<script>
+var state={ categories:new Set(), storages:new Set(), minBattery:0, maxPrice:1400, search:'' };
+
+var ALL_CATEGORIES=Array.from(new Set(window.PRODUCTS.map(function(p){return p.category}))).sort();
+var ALL_STORAGES=Array.from(new Set(window.PRODUCTS.map(function(p){return p.storage}))).sort(function(a,b){return a-b});
+
+function countFor(type,value){
+  return window.PRODUCTS.filter(function(p){
+    if(type==='category') return p.category===value;
+    if(type==='storage') return p.storage===value;
+  }).length;
+}
+
+document.getElementById('categoryFilters').innerHTML=ALL_CATEGORIES.map(function(cat){
+  return '<label class="checkRow"><input type="checkbox" data-cat="'+cat+'">'+cat+'<span class="cnt">'+countFor('category',cat)+'</span></label>';
+}).join('');
+
+document.getElementById('storageFilters').innerHTML=ALL_STORAGES.map(function(gb){
+  return '<label class="checkRow"><input type="checkbox" data-storage="'+gb+'">'+gb+'GB<span class="cnt">'+countFor('storage',gb)+'</span></label>';
+}).join('');
+
+function getFiltered(){
+  return window.PRODUCTS.filter(function(p){
+    if(state.categories.size && !state.categories.has(p.category)) return false;
+    if(state.storages.size && !state.storages.has(p.storage)) return false;
+    if(p.battery<state.minBattery) return false;
+    if(p.price>state.maxPrice) return false;
+    if(state.search && p.title.toLowerCase().indexOf(state.search)===-1) return false;
+    return true;
+  });
+}
+
+function sortList(list){
+  var mode=document.getElementById('sortSelect').value;
+  var copy=list.slice();
+  if(mode==='price-asc') copy.sort(function(a,b){return a.price-b.price});
+  else if(mode==='price-desc') copy.sort(function(a,b){return b.price-a.price});
+  else if(mode==='battery-desc') copy.sort(function(a,b){return b.battery-a.battery});
+  else copy.reverse();
+  return copy;
+}
+
+function renderChips(){
+  var chips=[];
+  state.categories.forEach(function(c){
+    chips.push({label:c, onRemove:function(){
+      state.categories.delete(c);
+      document.querySelector('#categoryFilters input[data-cat="'+c+'"]').checked=false;
+    }});
+  });
+  state.storages.forEach(function(s){
+    chips.push({label:s+'GB', onRemove:function(){
+      state.storages.delete(s);
+      document.querySelector('#storageFilters input[data-storage="'+s+'"]').checked=false;
+    }});
+  });
+  if(state.minBattery>0){
+    chips.push({label:'Batterij '+state.minBattery+'%+', onRemove:function(){
+      state.minBattery=0;
+      document.getElementById('batteryRange').value=0;
+      document.getElementById('batteryVal').textContent='Vanaf 0%';
+    }});
+  }
+  if(state.maxPrice<1400){
+    chips.push({label:'Tot € '+state.maxPrice, onRemove:function(){
+      state.maxPrice=1400;
+      document.getElementById('priceRange').value=1400;
+      document.getElementById('priceVal').textContent='Tot € 1400';
+    }});
+  }
+  if(state.search){
+    chips.push({label:'"'+state.search+'"', onRemove:function(){
+      state.search='';
+      document.getElementById('shopSearch').value='';
+    }});
+  }
+
+  var wrap=document.getElementById('activeFilters');
+  if(!chips.length){ wrap.innerHTML=''; return; }
+  wrap.innerHTML='';
+  chips.forEach(function(chip,i){
+    var el=document.createElement('span');
+    el.className='filterChip';
+    el.innerHTML=chip.label+' <button aria-label="Verwijder filter">×</button>';
+    el.querySelector('button').addEventListener('click',function(){
+      chip.onRemove();
+      render();
+    });
+    wrap.appendChild(el);
+  });
+  var clear=document.createElement('span');
+  clear.className='clearFiltersLink';
+  clear.textContent='Wis alle filters';
+  clear.addEventListener('click',resetAll);
+  wrap.appendChild(clear);
+}
+
+function render(){
+  var list=sortList(getFiltered());
+  var grid=document.getElementById('shopGrid');
+  var noRes=document.getElementById('shopNoResults');
+  document.getElementById('resultCount').innerHTML='<b>'+list.length+'</b> van '+window.PRODUCTS.length+' producten';
+  if(!list.length){
+    grid.style.display='none';
+    noRes.style.display='block';
+  }else{
+    grid.style.display='';
+    noRes.style.display='none';
+    grid.innerHTML=list.map(window.renderProductCard).join('');
+  }
+  renderChips();
+}
+
+function resetAll(){
+  state={ categories:new Set(), storages:new Set(), minBattery:0, maxPrice:1400, search:'' };
+  document.querySelectorAll('#categoryFilters input, #storageFilters input').forEach(function(cb){cb.checked=false});
+  document.getElementById('batteryRange').value=0;
+  document.getElementById('batteryVal').textContent='Vanaf 0%';
+  document.getElementById('priceRange').value=1400;
+  document.getElementById('priceVal').textContent='Tot € 1400';
+  document.getElementById('shopSearch').value='';
+  render();
+}
+
+document.querySelectorAll('#categoryFilters input').forEach(function(cb){
+  cb.addEventListener('change',function(){
+    if(cb.checked) state.categories.add(cb.dataset.cat); else state.categories.delete(cb.dataset.cat);
+    render();
+  });
+});
+document.querySelectorAll('#storageFilters input').forEach(function(cb){
+  cb.addEventListener('change',function(){
+    if(cb.checked) state.storages.add(parseInt(cb.dataset.storage,10)); else state.storages.delete(parseInt(cb.dataset.storage,10));
+    render();
+  });
+});
+document.getElementById('batteryRange').addEventListener('input',function(){
+  state.minBattery=parseInt(this.value,10);
+  document.getElementById('batteryVal').textContent='Vanaf '+state.minBattery+'%';
+  render();
+});
+document.getElementById('priceRange').addEventListener('input',function(){
+  state.maxPrice=parseInt(this.value,10);
+  document.getElementById('priceVal').textContent='Tot € '+state.maxPrice;
+  render();
+});
+document.getElementById('shopSearch').addEventListener('input',function(){
+  state.search=this.value.trim().toLowerCase();
+  render();
+});
+document.getElementById('sortSelect').addEventListener('change',render);
+document.getElementById('clearAll').addEventListener('click',resetAll);
+
+document.getElementById('filterToggle').addEventListener('click',function(){
+  document.getElementById('filterSidebar').classList.add('open');
+  document.body.classList.add('locked');
+});
+document.getElementById('filterClose').addEventListener('click',function(){
+  document.getElementById('filterSidebar').classList.remove('open');
+  document.body.classList.remove('locked');
+});
+
+render();
+</script>
+</body>
+</html>

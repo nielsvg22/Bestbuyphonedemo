@@ -15,7 +15,7 @@
 
 <header id="siteHeader"><div class="nav">
   <a class="logo" href="index.html"><svg class="mark" viewBox="0 0 24 24"><path d="M12 0c.9 3.2 2 5.6 3.4 7.1C16.9 8.6 19.2 9.7 22.4 10.6c-3.2.9-5.5 2-7 3.5C13.9 15.6 12.8 18 12 21.1c-.8-3.1-1.9-5.5-3.4-7C7.1 12.6 4.8 11.5 1.6 10.6c3.2-.9 5.5-2 7-3.5C10.1 5.6 11.2 3.2 12 0z"/></svg>iSelectStore</a>
-  <nav class="links"><a href="index.html">Home</a><a href="index.html#producten">Voorraad</a><a>Originele iPhone?</a><a>Veel gestelde vragen</a><a>iPhone verkopen/inruilen</a><a>Contact</a></nav>
+  <nav class="links"><a href="index.html">Home</a><a href="shop.html">Voorraad</a><a>Originele iPhone?</a><a>Veel gestelde vragen</a><a>iPhone verkopen/inruilen</a><a>Contact</a></nav>
   <div class="icons">
     <button class="ic" aria-label="Zoeken">🔍</button>
     <button class="ic" aria-label="Favorieten">♡</button>
@@ -25,7 +25,7 @@
 </div></header>
 
 <nav class="mnav" id="mnav">
-  <a href="index.html">Home</a><a href="index.html#producten">Voorraad</a><a>Originele iPhone?</a><a>Veel gestelde vragen</a><a>iPhone verkopen/inruilen</a><a>Contact</a>
+  <a href="index.html">Home</a><a href="shop.html">Voorraad</a><a>Originele iPhone?</a><a>Veel gestelde vragen</a><a>iPhone verkopen/inruilen</a><a>Contact</a>
   <a class="btn primary">Bekijk voorraad →</a>
 </nav>
 
@@ -108,7 +108,7 @@
 </div></section>
 
 <section style="background:var(--ivory)"><div class="wrap reveal">
-  <div class="head"><div><p class="eyebrow">Ook interessant</p><h2>Vergelijkbare toestellen</h2></div><a class="link" href="index.html#producten">Bekijk alle voorraad →</a></div>
+  <div class="head"><div><p class="eyebrow">Ook interessant</p><h2>Vergelijkbare toestellen</h2></div><a class="link" href="shop.html">Bekijk alle voorraad →</a></div>
   <div class="products" id="relatedGrid"></div>
 </div></section>
 </main>
@@ -123,7 +123,7 @@
 <footer><div class="wrap">
   <div class="footer">
     <div><a class="logo" href="index.html"><svg class="mark" viewBox="0 0 24 24"><path d="M12 0c.9 3.2 2 5.6 3.4 7.1C16.9 8.6 19.2 9.7 22.4 10.6c-3.2.9-5.5 2-7 3.5C13.9 15.6 12.8 18 12 21.1c-.8-3.1-1.9-5.5-3.4-7C7.1 12.6 4.8 11.5 1.6 10.6c3.2-.9 5.5-2 7-3.5C10.1 5.6 11.2 3.2 12 0z"/></svg>iSelectStore</a><p style="margin-top:14px">Premium pre-owned originele Apple-producten met volledige transparantie over conditie en batterijstatus.</p></div>
-    <div><h4>iPhones</h4><a href="index.html#producten">Voorraad</a><a>Originele iPhone?</a><a>iPhone verkopen/inruilen</a><a>Waardeschatting aanvragen</a></div>
+    <div><h4>iPhones</h4><a href="shop.html">Voorraad</a><a>Originele iPhone?</a><a>iPhone verkopen/inruilen</a><a>Waardeschatting aanvragen</a></div>
     <div><h4>Informatie</h4><a>BLOG</a><a href="index.html">Homepage</a><a>Contact</a><a>Veel gestelde vragen</a><a>Algemene voorwaarden</a><a>Privacyverklaring</a><a>Retourvoorwaarden</a><a>Klachten</a></div>
     <div><h4>Contact</h4><p>+31 6 43295022</p><p>info@iselectstore.nl</p><p>Oude Apeldoornseweg 45-067<br>7333 NR Apeldoorn<br>(open op afspraak)</p></div>
   </div>
@@ -140,8 +140,8 @@ var product=window.getProduct(params.get('id'));
 
 document.getElementById('pageTitle').textContent=product.title+' — iSelectStore';
 document.getElementById('breadcrumb').innerHTML=
-  '<a href="index.html">Home</a><span>/</span><a href="index.html#producten">Voorraad</a><span>/</span>'+
-  '<a href="index.html#producten">'+product.category+'</a><span>/</span>'+
+  '<a href="index.html">Home</a><span>/</span><a href="shop.html">Voorraad</a><span>/</span>'+
+  '<a href="shop.html">'+product.category+'</a><span>/</span>'+
   '<span style="color:var(--navy)">'+product.title+'</span>';
 
 document.getElementById('mainImg').src=product.gallery[0];

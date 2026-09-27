@@ -305,6 +305,51 @@ footer{border-top:1px solid var(--line);padding:56px 0 34px;background:var(--ivo
 .tiEstimate{font-size:44px;font-weight:800;color:var(--coral-ink);margin:6px 0 14px}
 .tiNote{color:var(--muted);font-size:13.5px;line-height:1.6;margin:0 0 22px}
 
+/* Shop page */
+.shopHero{background:linear-gradient(120deg,var(--navy),#2c4262 65%);padding:clamp(40px,7vw,64px) 0;position:relative;overflow:hidden}
+.shopHero::before{content:'';position:absolute;inset:0;background:radial-gradient(500px 260px at 90% 0%,rgba(249,133,139,.3),transparent 70%)}
+.shopHero .wrap{position:relative}
+.shopHero .eyebrow{color:var(--coral)}
+.shopHero h1{color:#fff;font-size:clamp(30px,4.4vw,46px);margin:0 0 10px}
+.shopHero p{color:rgba(255,255,255,.75);font-size:16px;max-width:520px;margin:0}
+.shopHero .breadcrumb{color:rgba(255,255,255,.6);margin-bottom:18px}
+.shopHero .breadcrumb a:hover{color:#fff}
+
+.shopLayout{display:grid;grid-template-columns:260px 1fr;gap:36px;align-items:start}
+.filterSidebar{border:1px solid var(--line);border-radius:20px;padding:24px;position:sticky;top:calc(var(--header-h) + 24px);background:#fff}
+.filterSidebar h4{font-size:12px;color:var(--navy);margin:0 0 14px;font-weight:700;text-transform:uppercase;letter-spacing:.07em}
+.filterGroup{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.filterGroup:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.checkRow{display:flex;align-items:center;gap:10px;padding:7px 0;cursor:pointer;font-size:13.5px;color:var(--ink)}
+.checkRow input{accent-color:var(--coral);width:16px;height:16px;flex:none}
+.checkRow .cnt{margin-left:auto;color:var(--muted);font-size:12px}
+.rangeRow{display:flex;flex-direction:column;gap:10px}
+.rangeRow input[type=range]{accent-color:var(--coral);width:100%}
+.rangeRow .rangeVal{font-size:13px;color:var(--navy);font-weight:600}
+.clearAllBtn{width:100%;text-align:center;padding:10px;border-radius:980px;border:1.5px solid var(--line);background:none;color:var(--muted);font-size:12.5px;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s}
+.clearAllBtn:hover{border-color:var(--coral);color:var(--coral-ink)}
+
+.shopToolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.resultCount{color:var(--muted);font-size:13.5px}
+.resultCount b{color:var(--navy)}
+.toolbarRight{display:flex;gap:10px;align-items:center}
+.sortSelect,.filterToggle{padding:10px 16px;border:1.5px solid var(--line);border-radius:980px;font-family:inherit;font-size:13px;color:var(--navy);background:#fff;cursor:pointer}
+.filterToggle{display:none;font-weight:600}
+
+.activeFilters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;align-items:center}
+.filterChip{display:inline-flex;align-items:center;gap:6px;background:#fdeceb;color:var(--coral-ink);padding:6px 8px 6px 14px;border-radius:999px;font-size:12.5px;font-weight:600}
+.filterChip button{background:none;border:0;color:var(--coral-ink);cursor:pointer;font-size:15px;line-height:1;padding:2px;display:grid;place-items:center}
+.clearFiltersLink{color:var(--muted);font-size:12.5px;text-decoration:underline;cursor:pointer}
+.filterCloseBtn{display:none;margin-bottom:16px;background:none;border:0;color:var(--muted);font-size:13px;cursor:pointer;text-decoration:underline;padding:0}
+
+@media(max-width:900px){
+ .shopLayout{grid-template-columns:1fr}
+ .filterSidebar{position:fixed;inset:0;z-index:65;border-radius:0;overflow:auto;transform:translateX(-100%);transition:transform .3s var(--ease);padding:24px 20px 100px}
+ .filterSidebar.open{transform:translateX(0)}
+ .filterToggle{display:inline-block}
+ .filterCloseBtn{display:inline-block}
+}
+
 @media(max-width:900px){
  .links{display:none}
  .burger{display:block}
