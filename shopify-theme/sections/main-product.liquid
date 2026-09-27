@@ -58,17 +58,9 @@
         <div class="optionGroup">
           <label>Accessoires toevoegen</label>
           <div class="accessories" id="accessoryList">
-            {% for accessory in section.settings.accessory_1, section.settings.accessory_2, section.settings.accessory_3 %}
-              {% if accessory %}
-                {% assign av = accessory.selected_or_first_available_variant %}
-                <label class="accessory">
-                  <input type="checkbox" data-variant-id="{{ av.id }}" data-price="{{ av.price }}">
-                  <span class="accCheck"></span>
-                  <span class="accInfo"><b>{{ accessory.title }}</b><small>{{ accessory.description | strip_html | truncate: 60 }}</small></span>
-                  <span class="accPrice">+ {{ av.price | money }}</span>
-                </label>
-              {% endif %}
-            {% endfor %}
+            {% if section.settings.accessory_1 %}{% render 'accessory-option', accessory: section.settings.accessory_1 %}{% endif %}
+            {% if section.settings.accessory_2 %}{% render 'accessory-option', accessory: section.settings.accessory_2 %}{% endif %}
+            {% if section.settings.accessory_3 %}{% render 'accessory-option', accessory: section.settings.accessory_3 %}{% endif %}
           </div>
           <div class="accTotal">Totaal incl. accessoires: <b class="js-total">{{ current_variant.price | money }}</b></div>
         </div>
