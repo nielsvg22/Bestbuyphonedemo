@@ -32,7 +32,7 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
   scroller.addEventListener('scroll',function(){
     var idx=Math.round(scroller.scrollLeft/(scroller.firstElementChild.getBoundingClientRect().width+14));
     dots.forEach(function(d,i){
-      d.style.background=i===idx?'var(--navy)':'';
+      d.style.background=i===idx?'var(--coral)':'';
       d.style.width=i===idx?'16px':'';
     });
   },{passive:true});
