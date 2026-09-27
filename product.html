@@ -19,7 +19,7 @@
   <div class="icons">
     <button class="ic" aria-label="Zoeken">🔍</button>
     <button class="ic" aria-label="Favorieten">♡</button>
-    <button class="ic" aria-label="Winkelwagen">🛍<span class="count">2</span></button>
+    <a class="ic" href="cart.html" aria-label="Winkelwagen">🛍<span class="count">0</span></a>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </div></header>
@@ -91,7 +91,7 @@
       </div>
 
       <div class="buyRow">
-        <button class="add">In winkelwagen — <span class="js-total-inline">€ 579,-</span></button>
+        <button class="add" id="addToCart">In winkelwagen — <span class="js-total-inline">€ 579,-</span></button>
       </div>
       <a class="btn" style="width:100%;margin-bottom:26px" href="#">Start inruilwaarde voor je oude toestel →</a>
 
@@ -147,7 +147,7 @@
 
 <div class="mobileBuy" id="mobileBuy">
   <div class="mbPrice"><b class="js-total">€ 579,-</b><span>€ 679,-</span></div>
-  <button class="add">In winkelwagen</button>
+  <button class="add" id="addToCartMobile">In winkelwagen</button>
 </div>
 
 <footer><div class="wrap">
@@ -160,6 +160,7 @@
   <div class="finePrint">De waardering van iselectstore.nl bij WebwinkelKeur Reviews is 9,8/10 gebaseerd op 607 reviews.<br>Copyright © 2026 iSelectStore · KVK 84268891 · BTW NL003937269B13</div>
 </div></footer>
 
+<script src="cart.js"></script>
 <script src="main.js"></script>
 <script>
 document.querySelectorAll('.thumb').forEach(function(t){
@@ -186,6 +187,29 @@ function updateTotal(){
 }
 accChecks.forEach(function(cb){ cb.addEventListener('change',updateTotal); });
 updateTotal();
+
+function currentTotal(){
+  var total=basePrice;
+  accChecks.forEach(function(cb){ if(cb.checked) total+=parseFloat(cb.dataset.price); });
+  return total;
+}
+function addCurrentToCart(){
+  var extras=[];
+  accChecks.forEach(function(cb){
+    if(cb.checked) extras.push(cb.closest('.accessory').querySelector('.accInfo b').textContent);
+  });
+  var meta='Licht gebruikt · 95% batt · 12 mnd garantie'+(extras.length? ' · + '+extras.join(', '):'');
+  iCart.addToCart({
+    id:'iphone-15-pro-256-zwart',
+    title:'iPhone 15 Pro 256GB zwart',
+    img:'images/iphone3.jpg',
+    price:currentTotal(),
+    meta:meta
+  });
+  window.location.href='cart.html';
+}
+document.getElementById('addToCart').addEventListener('click',addCurrentToCart);
+document.getElementById('addToCartMobile').addEventListener('click',addCurrentToCart);
 
 document.querySelectorAll('.accHead').forEach(function(h){
   h.addEventListener('click',function(){

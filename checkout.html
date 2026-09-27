@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1f3049">
+<title>Afrekenen — iSelectStore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="top"><div class="topin"><span>Originele Apple producten</span><span>Exacte batterijconditie</span><span>6–12 maanden garantie</span><span>Inruil mogelijk</span></div></div>
+
+<header id="siteHeader"><div class="nav">
+  <a class="logo" href="index.html"><svg class="mark" viewBox="0 0 24 24"><path d="M12 0c.9 3.2 2 5.6 3.4 7.1C16.9 8.6 19.2 9.7 22.4 10.6c-3.2.9-5.5 2-7 3.5C13.9 15.6 12.8 18 12 21.1c-.8-3.1-1.9-5.5-3.4-7C7.1 12.6 4.8 11.5 1.6 10.6c3.2-.9 5.5-2 7-3.5C10.1 5.6 11.2 3.2 12 0z"/></svg>iSelectStore</a>
+  <nav class="links"><a href="index.html">Home</a><a href="index.html#producten">Voorraad</a><a>Originele iPhone?</a><a>Veel gestelde vragen</a><a>iPhone verkopen/inruilen</a><a>Contact</a></nav>
+  <div class="icons">
+    <button class="ic" aria-label="Zoeken">🔍</button>
+    <button class="ic" aria-label="Favorieten">♡</button>
+    <a class="ic" href="cart.html" aria-label="Winkelwagen">🛍<span class="count">0</span></a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+<nav class="mnav" id="mnav">
+  <a href="index.html">Home</a><a href="index.html#producten">Voorraad</a><a>Originele iPhone?</a><a>Veel gestelde vragen</a><a>iPhone verkopen/inruilen</a><a>Contact</a>
+  <a class="btn primary">Bekijk voorraad →</a>
+</nav>
+
+<main>
+<section style="padding-top:32px"><div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="cart.html">Winkelwagen</a><span>/</span><span style="color:var(--navy)">Afrekenen</span></div>
+  <h1 style="margin-bottom:32px">Afrekenen</h1>
+
+  <div class="cartLayout" id="checkoutLayout">
+    <div id="checkoutFormWrap">
+      <form id="checkoutForm">
+        <div class="checkoutBlock">
+          <h3>Contactgegevens</h3>
+          <div class="formRow"><input type="email" placeholder="E-mailadres" required></div>
+        </div>
+        <div class="checkoutBlock">
+          <h3>Verzendadres</h3>
+          <div class="formGrid">
+            <input placeholder="Voornaam" required>
+            <input placeholder="Achternaam" required>
+            <input placeholder="Straat en huisnummer" required style="grid-column:1/-1">
+            <input placeholder="Postcode" required>
+            <input placeholder="Plaats" required>
+          </div>
+        </div>
+        <div class="checkoutBlock">
+          <h3>Betaalmethode</h3>
+          <div class="payOptions">
+            <label class="payOption"><input type="radio" name="pay" checked><span>iDEAL</span></label>
+            <label class="payOption"><input type="radio" name="pay"><span>Creditcard</span></label>
+            <label class="payOption"><input type="radio" name="pay"><span>Klarna — achteraf betalen</span></label>
+          </div>
+        </div>
+        <button class="add" type="submit" style="width:100%;height:54px;font-size:15px">Bestelling plaatsen →</button>
+      </form>
+    </div>
+
+    <aside class="cartSummary">
+      <h3>Je bestelling</h3>
+      <div id="checkoutItems"></div>
+      <div class="sumRow" style="margin-top:16px"><span>Subtotaal</span><b id="coSubtotal">€ 0,-</b></div>
+      <div class="sumRow"><span>Verzending</span><b>Gratis</b></div>
+      <div class="sumRow total"><span>Totaal</span><b id="coTotal">€ 0,-</b></div>
+    </aside>
+  </div>
+</div></section>
+</main>
+
+<div class="patternBand"></div>
+
+<footer><div class="wrap">
+  <div class="footer">
+    <div><a class="logo" href="index.html"><svg class="mark" viewBox="0 0 24 24"><path d="M12 0c.9 3.2 2 5.6 3.4 7.1C16.9 8.6 19.2 9.7 22.4 10.6c-3.2.9-5.5 2-7 3.5C13.9 15.6 12.8 18 12 21.1c-.8-3.1-1.9-5.5-3.4-7C7.1 12.6 4.8 11.5 1.6 10.6c3.2-.9 5.5-2 7-3.5C10.1 5.6 11.2 3.2 12 0z"/></svg>iSelectStore</a><p style="margin-top:14px">Premium pre-owned originele Apple-producten met volledige transparantie over conditie en batterijstatus.</p></div>
+    <div><h4>iPhones</h4><a href="index.html#producten">Voorraad</a><a>Originele iPhone?</a><a>iPhone verkopen/inruilen</a><a>Waardeschatting aanvragen</a></div>
+    <div><h4>Informatie</h4><a>BLOG</a><a href="index.html">Homepage</a><a>Contact</a><a>Veel gestelde vragen</a><a>Algemene voorwaarden</a><a>Privacyverklaring</a><a>Retourvoorwaarden</a><a>Klachten</a></div>
+    <div><h4>Contact</h4><p>+31 6 43295022</p><p>info@iselectstore.nl</p><p>Oude Apeldoornseweg 45-067<br>7333 NR Apeldoorn<br>(open op afspraak)</p></div>
+  </div>
+  <div class="finePrint">De waardering van iselectstore.nl bij WebwinkelKeur Reviews is 9,8/10 gebaseerd op 607 reviews.<br>Copyright © 2026 iSelectStore · KVK 84268891 · BTW NL003937269B13</div>
+</div></footer>
+
+<script src="cart.js"></script>
+<script src="main.js"></script>
+<script>
+document.querySelectorAll('.payOption').forEach(function(opt){
+  opt.addEventListener('click',function(){
+    document.querySelectorAll('.payOption input').forEach(function(i){i.checked=false});
+    opt.querySelector('input').checked=true;
+  });
+});
+
+var items=iCart.getCart();
+if(!items.length){
+  document.getElementById('checkoutLayout').innerHTML='<div class="cartEmpty" style="grid-column:1/-1">'+
+    '<p>Je winkelwagen is leeg — er valt niets af te rekenen.</p>'+
+    '<a class="btn primary" href="index.html#producten">Bekijk voorraad →</a>'+
+  '</div>';
+}else{
+  document.getElementById('checkoutItems').innerHTML=items.map(function(item){
+    return '<div class="miniCartItem"><img src="'+item.img+'" alt="'+item.title+'">'+
+      '<div class="info">'+item.title+'<small>'+item.meta+'</small></div>'+
+      '<b>'+iCart.fmt(item.price)+'</b></div>';
+  }).join('');
+  var total=iCart.cartTotal(items);
+  document.getElementById('coSubtotal').textContent=iCart.fmt(total);
+  document.getElementById('coTotal').textContent=iCart.fmt(total);
+
+  document.getElementById('checkoutForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var orderNum='ISS-'+Math.floor(100000+Math.random()*900000);
+    var total=iCart.cartTotal();
+    iCart.clearCart();
+    document.getElementById('checkoutLayout').innerHTML='<div class="orderDone" style="grid-column:1/-1">'+
+      '<div class="checkIcon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>'+
+      '<h2>Bedankt voor je bestelling!</h2>'+
+      '<p>Bestelnummer <span class="orderNum">'+orderNum+'</span></p>'+
+      '<p>Totaal betaald: <span class="orderNum">'+iCart.fmt(total)+'</span></p>'+
+      '<p style="margin-top:18px">Je ontvangt een bevestiging per e-mail. We nemen persoonlijk contact met je op om de levering af te stemmen.</p>'+
+      '<a class="btn primary" href="index.html" style="margin-top:24px">Terug naar de shop →</a>'+
+    '</div>';
+  });
+}
+</script>
+</body>
+</html>
