@@ -4,7 +4,7 @@
   --max:1260px;--ease:cubic-bezier(.22,1,.36,1);--header-h:52px
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
 body{margin:0;font-family:'Poppins',-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
 body.locked{overflow:hidden}
 a{text-decoration:none;color:inherit}
@@ -272,6 +272,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 34px;background:var(--ivo
 
 /* Cart & checkout */
 .cartLayout{display:grid;grid-template-columns:1fr 360px;gap:40px;align-items:start}
+.cartLayout>*{min-width:0}
 .cartItem{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
 .cartItem img{width:96px;height:96px;border-radius:14px;object-fit:cover;flex:none;background:var(--soft)}
 .cartItem .info{flex:1;display:flex;flex-direction:column}
@@ -341,6 +342,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 34px;background:var(--ivo
 .shopHero .breadcrumb a:hover{color:#fff}
 
 .shopLayout{display:grid;grid-template-columns:260px 1fr;gap:36px;align-items:start}
+.shopMain{min-width:0}
 .filterSidebar{border:1px solid var(--line);border-radius:20px;padding:24px;position:sticky;top:calc(var(--header-h) + 24px);background:#fff}
 .filterSidebar h4{font-size:12px;color:var(--navy);margin:0 0 14px;font-weight:700;text-transform:uppercase;letter-spacing:.07em}
 .filterGroup{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line)}
