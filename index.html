@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>BestBuyPhone Premium</title>
+<style>
+:root{
+  --blue:#0877ff;--ink:#0b0d11;--muted:#6f7682;--line:#e7ebf0;--soft:#f6f7f9;
+  --max:1280px
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff}
+a{text-decoration:none;color:inherit}.top{background:#111c2b;color:#fff;font-size:11px;white-space:nowrap;overflow:auto}
+.topin{max-width:var(--max);margin:auto;padding:9px 18px;display:flex;gap:27px;justify-content:center}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{max-width:var(--max);margin:auto;height:66px;padding:0 20px;display:flex;align-items:center;gap:24px}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.6px;display:flex;gap:9px;align-items:center}.mark{width:18px;height:27px;border:2px solid var(--blue);border-radius:5px}
+.links{display:flex;gap:22px;justify-content:center;flex:1;font-size:14px}.icons{display:flex;gap:8px}.ic{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#f3f5f7}
+.hero{background:linear-gradient(125deg,#f8f9fb,#fff 52%,#f1f3f5)}
+.heroIn{max-width:var(--max);margin:auto;min-height:570px;padding:34px 20px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px}
+.eye{font-size:12px;letter-spacing:.16em;font-weight:750;color:#687487;margin-bottom:16px}
+h1{font-size:62px;line-height:.96;letter-spacing:-3.5px;margin:0 0 20px}h1 span{color:var(--blue)}
+.lead{font-size:18px;line-height:1.55;color:#59616d;max-width:570px}.ctas{display:flex;gap:11px;margin-top:25px}
+.btn{padding:14px 21px;border:1px solid #dbe1e8;border-radius:13px;font-weight:700;display:inline-flex;justify-content:center}.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.rating{display:flex;gap:10px;margin-top:24px;align-items:center;font-size:13px;color:#626a75}.stars{color:#ffb300}
+.heroImg{display:flex;justify-content:center}.heroImg img{width:min(530px,92%);aspect-ratio:1;object-fit:cover;border-radius:30px;box-shadow:0 24px 60px rgba(0,0,0,.14)}
+.wrap{max-width:var(--max);margin:auto;padding:0 20px}
+.trust{border-block:1px solid var(--line)}.trustgrid{display:grid;grid-template-columns:repeat(4,1fr)}
+.trustitem{display:flex;gap:12px;align-items:center;padding:22px 16px;border-right:1px solid var(--line)}.trustitem:last-child{border-right:0}
+.bubble{width:40px;height:40px;border-radius:50%;background:#edf5ff;color:var(--blue);display:grid;place-items:center}.trustitem b{display:block;font-size:13px}.trustitem small{color:var(--muted)}
+section{padding:62px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:24px}
+h2{font-size:34px;letter-spacing:-1.4px;margin:0 0 5px}.sub{color:var(--muted);margin:0}.link{color:var(--blue);font-weight:700;font-size:14px}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.cat{position:relative;overflow:hidden;border-radius:22px;min-height:300px;background:var(--soft);border:1px solid var(--line)}
+.cat img{width:100%;height:100%;object-fit:cover}.catcopy{position:absolute;left:0;right:0;bottom:0;padding:48px 17px 17px;background:linear-gradient(transparent,rgba(255,255,255,.98) 60%)}
+.catcopy b{font-size:19px;display:block}.catcopy span{font-size:12px;color:#5e6672}
+.tabs{display:flex;gap:24px;border-bottom:1px solid var(--line);overflow:auto;margin-bottom:20px}.tab{padding-bottom:11px;color:#727986;white-space:nowrap}.tab.active{color:#111;border-bottom:2px solid #111;font-weight:700}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.card{border:1px solid var(--line);border-radius:19px;padding:12px;position:relative;background:#fff;display:flex;flex-direction:column}
+.card>img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;background:#f6f6f6}.heart{position:absolute;right:16px;top:16px;width:33px;height:33px;border-radius:50%;background:white;display:grid;place-items:center}
+.badge{display:inline-block;margin:11px 0 8px;background:#e8f7ec;color:#1a7e3c;padding:5px 8px;border-radius:999px;font-size:10px}.card h3{font-size:16px;line-height:1.25;margin:0 0 4px}.meta{color:var(--muted);font-size:12px}
+.price{display:flex;gap:8px;align-items:baseline;margin:9px 0 13px}.price b{font-size:21px}.old{font-size:12px;text-decoration:line-through;color:#9ca2aa}.add{margin-top:auto;border:0;border-radius:11px;padding:12px;background:var(--blue);color:#fff;font-weight:700}
+.trade{background:linear-gradient(110deg,#f1f3f6,#fff);border-radius:30px;display:grid;grid-template-columns:1.05fr .95fr;overflow:hidden;align-items:center}.tradecopy{padding:44px}.trade h2{font-size:42px}.trade img{width:100%;height:350px;object-fit:cover}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.review{border:1px solid var(--line);border-radius:18px;padding:20px}.review p{color:#4f5662;line-height:1.5}.review b{display:block;margin-top:10px}
+footer{border-top:1px solid var(--line);padding:42px 0 28px}.footer{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:30px}.footer h4{margin:0 0 10px}.footer p,.footer a{display:block;color:#6e7580;font-size:12px;line-height:1.8;margin:0}
+@media(max-width:900px){.links{display:none}.icons{margin-left:auto}.heroIn{grid-template-columns:1fr;text-align:center;min-height:auto;padding-top:50px}.lead{margin:auto}.ctas,.rating{justify-content:center}.heroImg{height:430px}.trustgrid{grid-template-columns:1fr 1fr}.trustitem:nth-child(2){border-right:0}.cats{grid-template-columns:1fr 1fr}.products{grid-template-columns:1fr 1fr}.trade{grid-template-columns:1fr}.reviews{grid-template-columns:1fr}.footer{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){
+ .topin{justify-content:flex-start}.nav{height:58px;padding:0 14px}.logo{font-size:19px}.ic{width:34px;height:34px}
+ .heroIn{padding:38px 16px 18px}.eye{font-size:10px}h1{font-size:42px;letter-spacing:-2.4px}.lead{font-size:16px}.ctas{flex-direction:column}.btn{width:100%}
+ .heroImg{height:330px}.heroImg img{width:88%;border-radius:24px}
+ .wrap{padding:0 16px}section{padding:46px 0}h2{font-size:28px}.head{align-items:flex-start}
+ .trustitem{padding:14px 8px;gap:8px}.bubble{width:34px;height:34px}.trustitem b{font-size:11px}.trustitem small{font-size:9px}
+ .cats{display:flex;overflow:auto;scroll-snap-type:x mandatory;margin-right:-16px;padding-right:16px}.cat{min-width:72vw;min-height:255px;scroll-snap-align:start}
+ .products{display:flex;overflow:auto;scroll-snap-type:x mandatory;margin-right:-16px;padding-right:16px;gap:12px}.card{min-width:72vw;scroll-snap-align:start}.card>img{aspect-ratio:1.05/1}
+ .trade{border-radius:22px}.tradecopy{padding:28px}.trade h2{font-size:31px}.trade img{height:255px}
+ .footer{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="top"><div class="topin"><span>✓ Premium pre-owned Apple</span><span>✓ Originele onderdelen</span><span>✓ 6–12 maanden garantie</span><span>✓ Transparante batterijconditie</span></div></div>
+<header><div class="nav"><div class="logo"><span class="mark"></span>BestBuyPhone</div><nav class="links"><a>iPhone</a><a>iPad</a><a>MacBook</a><a>Apple Watch</a><a>Inruilen</a></nav><div class="icons"><div class="ic">⌕</div><div class="ic">♡</div><div class="ic">🛒</div><div class="ic">☰</div></div></div></header>
+
+<main>
+<section class="hero"><div class="heroIn"><div>
+<div class="eye">PREMIUM PRE-OWNED APPLE</div>
+<h1>Originele Apple.<br><span>Voor een betere prijs.</span></h1>
+<p class="lead">Premium pre-owned Apple-producten met volledige transparantie over conditie en batterijstatus. Je ziet het daadwerkelijke toestel dat je koopt.</p>
+<div class="ctas"><a class="btn primary" href="#producten">Bekijk iPhones →</a><a class="btn" href="#categorie">Bekijk categorieën</a></div>
+<div class="rating"><span class="stars">★★★★★</span><b>9,8/10</b><span>600+ reviews</span></div>
+</div>
+<div class="heroImg"><img src="images/hero.jpg" alt="iPhone Air BestBuyPhone"></div>
+</div></section>
+
+<div class="trust"><div class="wrap trustgrid">
+<div class="trustitem"><div class="bubble"></div><div><b>Originele Apple</b><small>Geen imitatie</small></div></div>
+<div class="trustitem"><div class="bubble">◎</div><div><b>Echte productfoto's</b><small>Van het toestel zelf</small></div></div>
+<div class="trustitem"><div class="bubble">▯</div><div><b>Batterijconditie</b><small>Direct inzicht</small></div></div>
+<div class="trustitem"><div class="bubble">✓</div><div><b>Garantie</b><small>6–12 maanden</small></div></div>
+</div></div>
+
+<section id="categorie"><div class="wrap">
+<div class="head"><div><h2>Shop per categorie</h2><p class="sub">Echte foto's uit de huidige BestBuyPhone-webshop.</p></div><a class="link">Bekijk alles →</a></div>
+<div class="cats">
+<a class="cat"><img src="images/iphone.jpg" alt="Apple iPhone"><div class="catcopy"><b>iPhone</b><span>Bekijk alle iPhones →</span></div></a>
+<a class="cat"><img src="images/ipad.jpg" alt="Apple iPad"><div class="catcopy"><b>iPad</b><span>Bekijk alle iPads →</span></div></a>
+<a class="cat"><img src="images/macbook.jpg" alt="Apple MacBook"><div class="catcopy"><b>MacBook</b><span>Bekijk alle MacBooks →</span></div></a>
+<a class="cat"><img src="images/watch.jpg" alt="Apple Watch"><div class="catcopy"><b>Apple Watch</b><span>Bekijk alle Watches →</span></div></a>
+</div></div></section>
+
+<section id="producten" style="padding-top:6px"><div class="wrap">
+<div class="head"><div><h2>Populaire toestellen</h2><p class="sub">Actuele BestBuyPhone-productstijl.</p></div><a class="link">Bekijk alle voorraad →</a></div>
+<div class="tabs"><span class="tab active">Alle</span><span class="tab">iPhone</span><span class="tab">iPad</span><span class="tab">MacBook</span><span class="tab">Apple Watch</span></div>
+<div class="products">
+<article class="card"><span class="heart">♡</span><img src="images/hero.jpg"><span class="badge">100% batterij</span><h3>iPhone Air 512GB zwart</h3><div class="meta">Krasvrij · 12 maanden garantie</div><div class="price"><b>€ 789,-</b><span class="old">€ 899,-</span></div><button class="add">Bekijk toestel</button></article>
+<article class="card"><span class="heart">♡</span><img src="images/iphone2.jpg"><span class="badge">Premium pre-owned</span><h3>Originele Apple iPhone</h3><div class="meta">Transparante conditie</div><div class="price"><b>Bekijk voorraad</b></div><button class="add">Bekijk iPhones</button></article>
+<article class="card"><span class="heart">♡</span><img src="images/ipad.jpg"><span class="badge">Origineel Apple</span><h3>Apple iPad</h3><div class="meta">Premium pre-owned</div><div class="price"><b>Bekijk voorraad</b></div><button class="add">Bekijk iPads</button></article>
+<article class="card"><span class="heart">♡</span><img src="images/watch.jpg"><span class="badge">12 maanden garantie</span><h3>Apple Watch</h3><div class="meta">Premium pre-owned</div><div class="price"><b>Bekijk voorraad</b></div><button class="add">Bekijk Watches</button></article>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="trade"><div class="tradecopy"><div class="eye">INRUILSERVICE</div><h2>Je oude iPhone inruilen?</h2><p class="lead" style="font-size:16px">Ontvang een eerlijke inruilwaarde en gebruik het bedrag voor je volgende toestel.</p><a class="btn primary" style="margin-top:15px">Start inruilwaarde →</a></div><img src="images/tradein.jpg"></div>
+</div></section>
+
+<section style="background:#fafafa"><div class="wrap">
+<div class="head"><div><h2>Wat klanten zeggen</h2><p class="sub">Persoonlijke service en duidelijke communicatie.</p></div></div>
+<div class="reviews"><div class="review"><div class="stars">★★★★★</div><p>"Snelle en vriendelijke service geweldig!!"</p><b>Marco de Kleine</b></div><div class="review"><div class="stars">★★★★★</div><p>"Snelle reactie, plezierig contact en mooie telefoon voor een mooie prijs."</p><b>Aja B</b></div><div class="review"><div class="stars">★★★★★</div><p>"Vriendelijk. Goede service. Goede communicatie."</p><b>Ramon van der Horst</b></div></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><div class="footer"><div><div class="logo"><span class="mark"></span>BestBuyPhone</div><p>Premium pre-owned originele Apple-producten.</p></div><div><h4>Shop</h4><a>iPhone</a><a>iPad</a><a>MacBook</a><a>Apple Watch</a></div><div><h4>Service</h4><a>Garantie</a><a>Retourneren</a><a>Inruilen</a></div><div><h4>Contact</h4><p>info@bestbuyphone.nl</p><p>Apeldoorn</p></div></div></div></footer>
+</body>
+</html>
