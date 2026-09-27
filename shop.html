@@ -73,7 +73,7 @@
 
     <div class="shopMain">
       <div class="shopToolbar">
-        <input type="search" id="shopSearch" placeholder="Zoek een toestel…" style="padding:10px 16px;border:1.5px solid var(--line);border-radius:980px;font-family:inherit;font-size:13px;min-width:0;max-width:100%;flex:1 1 220px">
+        <input type="search" id="shopSearch" class="shopSearchInput" placeholder="Zoek een toestel…">
         <div class="toolbarRight">
           <span class="resultCount" id="resultCount"></span>
           <select class="sortSelect" id="sortSelect">
@@ -82,13 +82,13 @@
             <option value="price-desc">Prijs hoog - laag</option>
             <option value="battery-desc">Batterij hoog - laag</option>
           </select>
-          <button class="filterToggle" id="filterToggle">Filters</button>
+          <button class="filterToggle" id="filterToggle">⚙ Filters</button>
         </div>
       </div>
 
       <div class="activeFilters" id="activeFilters"></div>
 
-      <div class="products" id="shopGrid"></div>
+      <div class="products shopProductsGrid" id="shopGrid"></div>
       <p class="noResults" id="shopNoResults" style="display:none">Geen toestellen gevonden met deze filters.</p>
     </div>
   </div>
