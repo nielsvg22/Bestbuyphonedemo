@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#1f3049">
-<title>Afrekenen — iSelectStore</title>
+<title>Contact — iSelectStore</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -30,45 +30,43 @@
 </nav>
 
 <main>
-<section style="padding-top:32px"><div class="wrap">
-  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="cart.html">Winkelwagen</a><span>/</span><span style="color:var(--navy)">Afrekenen</span></div>
-  <h1 style="margin-bottom:32px">Afrekenen</h1>
+<section class="shopHero"><div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:#fff">Contact</span></div>
+  <p class="eyebrow">Persoonlijk contact</p>
+  <h1>Neem contact op</h1>
+  <p>Heb je een vraag over een toestel, je bestelling of een inruil? We reageren snel en persoonlijk.</p>
+</div></section>
 
-  <div class="cartLayout" id="checkoutLayout">
-    <div id="checkoutFormWrap">
-      <form id="checkoutForm">
+<section><div class="wrap reveal">
+  <div class="cartLayout">
+    <div>
+      <form class="contactForm" id="contactForm">
         <div class="checkoutBlock">
-          <h3>Contactgegevens</h3>
-          <div class="formRow"><input type="email" placeholder="E-mailadres" required></div>
-        </div>
-        <div class="checkoutBlock">
-          <h3>Verzendadres</h3>
+          <h3>Jouw gegevens</h3>
           <div class="formGrid">
-            <input placeholder="Voornaam" required>
-            <input placeholder="Achternaam" required>
-            <input placeholder="Straat en huisnummer" required style="grid-column:1/-1">
-            <input placeholder="Postcode" required>
-            <input placeholder="Plaats" required>
+            <input placeholder="Naam" required>
+            <input type="email" placeholder="E-mailadres" required>
           </div>
         </div>
         <div class="checkoutBlock">
-          <h3>Betaalmethode</h3>
-          <div class="payOptions">
-            <label class="payOption"><input type="radio" name="pay" checked><span>iDEAL</span></label>
-            <label class="payOption"><input type="radio" name="pay"><span>Creditcard</span></label>
-            <label class="payOption"><input type="radio" name="pay"><span>Klarna — achteraf betalen</span></label>
-          </div>
+          <h3>Onderwerp</h3>
+          <div class="formRow"><input placeholder="Bijv. vraag over iPhone 15 Pro" required></div>
         </div>
-        <button class="add" type="submit" style="width:100%;height:54px;font-size:15px">Bestelling plaatsen →</button>
+        <div class="checkoutBlock">
+          <h3>Bericht</h3>
+          <div class="formRow"><textarea rows="6" placeholder="Waar kunnen we je mee helpen?" required style="width:100%;padding:13px 16px;border:1.5px solid var(--line);border-radius:14px;font-family:inherit;font-size:14px;resize:vertical"></textarea></div>
+        </div>
+        <button class="add" type="submit" style="width:100%;height:52px;font-size:15px">Bericht versturen →</button>
       </form>
     </div>
 
     <aside class="cartSummary">
-      <h3>Je bestelling</h3>
-      <div id="checkoutItems"></div>
-      <div class="sumRow" style="margin-top:16px"><span>Subtotaal</span><b id="coSubtotal">€ 0,-</b></div>
-      <div class="sumRow"><span>Verzending</span><b>Gratis</b></div>
-      <div class="sumRow total"><span>Totaal</span><b id="coTotal">€ 0,-</b></div>
+      <h3>Direct contact</h3>
+      <a href="https://wa.me/31643295022" target="_blank" rel="noopener" class="btn primary" style="width:100%;justify-content:center;margin-bottom:14px">WhatsApp ons →</a>
+      <div class="sumRow"><span>Telefoon</span><b>+31 6 43295022</b></div>
+      <div class="sumRow"><span>E-mail</span><b>info@iselectstore.nl</b></div>
+      <div class="sumRow" style="margin-bottom:0"><span>Adres</span><b style="text-align:right">Oude Apeldoornseweg 45-067<br>7333 NR Apeldoorn</b></div>
+      <p style="color:var(--muted);font-size:12.5px;margin-top:16px">Bezoek op afspraak. We reageren doorgaans binnen 24 uur.</p>
     </aside>
   </div>
 </div></section>
@@ -109,45 +107,5 @@
 <script src="cart.js"></script>
 <script src="main.js"></script>
 <script src="tradein.js"></script>
-<script>
-document.querySelectorAll('.payOption').forEach(function(opt){
-  opt.addEventListener('click',function(){
-    document.querySelectorAll('.payOption input').forEach(function(i){i.checked=false});
-    opt.querySelector('input').checked=true;
-  });
-});
-
-var items=iCart.getCart();
-if(!items.length){
-  document.getElementById('checkoutLayout').innerHTML='<div class="cartEmpty" style="grid-column:1/-1">'+
-    '<p>Je winkelwagen is leeg — er valt niets af te rekenen.</p>'+
-    '<a class="btn primary" href="shop.html">Bekijk voorraad →</a>'+
-  '</div>';
-}else{
-  document.getElementById('checkoutItems').innerHTML=items.map(function(item){
-    return '<div class="miniCartItem"><img src="'+item.img+'" alt="'+item.title+'">'+
-      '<div class="info">'+item.title+'<small>'+item.meta+'</small></div>'+
-      '<b>'+iCart.fmt(item.price)+'</b></div>';
-  }).join('');
-  var total=iCart.cartTotal(items);
-  document.getElementById('coSubtotal').textContent=iCart.fmt(total);
-  document.getElementById('coTotal').textContent=iCart.fmt(total);
-
-  document.getElementById('checkoutForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    var orderNum='ISS-'+Math.floor(100000+Math.random()*900000);
-    var total=iCart.cartTotal();
-    iCart.clearCart();
-    document.getElementById('checkoutLayout').innerHTML='<div class="orderDone" style="grid-column:1/-1">'+
-      '<div class="checkIcon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>'+
-      '<h2>Bedankt voor je bestelling!</h2>'+
-      '<p>Bestelnummer <span class="orderNum">'+orderNum+'</span></p>'+
-      '<p>Totaal betaald: <span class="orderNum">'+iCart.fmt(total)+'</span></p>'+
-      '<p style="margin-top:18px">Je ontvangt een bevestiging per e-mail. We nemen persoonlijk contact met je op om de levering af te stemmen.</p>'+
-      '<a class="btn primary" href="index.html" style="margin-top:24px">Terug naar de shop →</a>'+
-    '</div>';
-  });
-}
-</script>
 </body>
 </html>

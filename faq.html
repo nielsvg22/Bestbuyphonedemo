@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#1f3049">
-<title>Afrekenen — iSelectStore</title>
+<title>Veelgestelde vragen — iSelectStore</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -30,46 +30,43 @@
 </nav>
 
 <main>
-<section style="padding-top:32px"><div class="wrap">
-  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="cart.html">Winkelwagen</a><span>/</span><span style="color:var(--navy)">Afrekenen</span></div>
-  <h1 style="margin-bottom:32px">Afrekenen</h1>
+<section class="shopHero"><div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:#fff">Veelgestelde vragen</span></div>
+  <p class="eyebrow">Hulp nodig?</p>
+  <h1>Veelgestelde vragen</h1>
+  <p>Staat je vraag er niet bij? Neem gerust <a href="contact.html" style="color:#fff;text-decoration:underline">persoonlijk contact</a> met ons op.</p>
+</div></section>
 
-  <div class="cartLayout" id="checkoutLayout">
-    <div id="checkoutFormWrap">
-      <form id="checkoutForm">
-        <div class="checkoutBlock">
-          <h3>Contactgegevens</h3>
-          <div class="formRow"><input type="email" placeholder="E-mailadres" required></div>
-        </div>
-        <div class="checkoutBlock">
-          <h3>Verzendadres</h3>
-          <div class="formGrid">
-            <input placeholder="Voornaam" required>
-            <input placeholder="Achternaam" required>
-            <input placeholder="Straat en huisnummer" required style="grid-column:1/-1">
-            <input placeholder="Postcode" required>
-            <input placeholder="Plaats" required>
-          </div>
-        </div>
-        <div class="checkoutBlock">
-          <h3>Betaalmethode</h3>
-          <div class="payOptions">
-            <label class="payOption"><input type="radio" name="pay" checked><span>iDEAL</span></label>
-            <label class="payOption"><input type="radio" name="pay"><span>Creditcard</span></label>
-            <label class="payOption"><input type="radio" name="pay"><span>Klarna — achteraf betalen</span></label>
-          </div>
-        </div>
-        <button class="add" type="submit" style="width:100%;height:54px;font-size:15px">Bestelling plaatsen →</button>
-      </form>
+<section><div class="wrap reveal" style="max-width:820px">
+  <div class="accordion" style="border-top:1px solid var(--line)">
+    <div class="accItem open">
+      <div class="accHead">Zijn jullie iPhones origineel of refurbished?</div>
+      <div class="accBody" style="max-height:200px"><p>Al onze toestellen zijn originele premium pre-owned Apple-producten: niet refurbished en zonder vervangen onderdelen. Je koopt het daadwerkelijke toestel dat op de foto's staat, geen stockfoto's.</p></div>
     </div>
-
-    <aside class="cartSummary">
-      <h3>Je bestelling</h3>
-      <div id="checkoutItems"></div>
-      <div class="sumRow" style="margin-top:16px"><span>Subtotaal</span><b id="coSubtotal">€ 0,-</b></div>
-      <div class="sumRow"><span>Verzending</span><b>Gratis</b></div>
-      <div class="sumRow total"><span>Totaal</span><b id="coTotal">€ 0,-</b></div>
-    </aside>
+    <div class="accItem">
+      <div class="accHead">Hoe wordt de batterijconditie bepaald?</div>
+      <div class="accBody"><p>We meten de batterijcapaciteit met de originele Apple-diagnosetools en vermelden dit percentage duidelijk bij elk product. Zo weet je precies wat je koopt, zonder verrassingen achteraf.</p></div>
+    </div>
+    <div class="accItem">
+      <div class="accHead">Wat houdt de garantie in?</div>
+      <div class="accBody"><p>Elk toestel wordt geleverd met 6 tot 12 maanden garantie, afhankelijk van het product. Mocht er onverhoopt iets mis zijn, dan lossen we dat persoonlijk en snel voor je op.</p></div>
+    </div>
+    <div class="accItem">
+      <div class="accHead">Kan ik mijn oude toestel inruilen?</div>
+      <div class="accBody"><p>Zeker! Gebruik onze <a href="#" class="js-tradein-trigger" style="color:var(--coral-ink);font-weight:600">inruil-waardeschatter</a> voor een indicatie van de waarde, en vraag deze vervolgens direct aan via WhatsApp.</p></div>
+    </div>
+    <div class="accItem">
+      <div class="accHead">Hoe werkt de levering, of kan ik afhalen?</div>
+      <div class="accBody"><p>We verzenden gratis binnen Nederland. Liever persoonlijk afhalen? Dat kan op afspraak in Apeldoorn — dan zie je het toestel meteen zelf.</p></div>
+    </div>
+    <div class="accItem">
+      <div class="accHead">Wat als het toestel niet aan de beschrijving voldoet?</div>
+      <div class="accBody"><p>Dat willen we natuurlijk niet. Neem direct contact op, dan zoeken we samen naar een passende oplossing — ruilen, repareren of retourneren.</p></div>
+    </div>
+    <div class="accItem">
+      <div class="accHead">Welke betaalmethoden accepteren jullie?</div>
+      <div class="accBody"><p>Je kunt veilig afrekenen met iDEAL, creditcard of achteraf betalen via Klarna.</p></div>
+    </div>
   </div>
 </div></section>
 </main>
@@ -109,45 +106,5 @@
 <script src="cart.js"></script>
 <script src="main.js"></script>
 <script src="tradein.js"></script>
-<script>
-document.querySelectorAll('.payOption').forEach(function(opt){
-  opt.addEventListener('click',function(){
-    document.querySelectorAll('.payOption input').forEach(function(i){i.checked=false});
-    opt.querySelector('input').checked=true;
-  });
-});
-
-var items=iCart.getCart();
-if(!items.length){
-  document.getElementById('checkoutLayout').innerHTML='<div class="cartEmpty" style="grid-column:1/-1">'+
-    '<p>Je winkelwagen is leeg — er valt niets af te rekenen.</p>'+
-    '<a class="btn primary" href="shop.html">Bekijk voorraad →</a>'+
-  '</div>';
-}else{
-  document.getElementById('checkoutItems').innerHTML=items.map(function(item){
-    return '<div class="miniCartItem"><img src="'+item.img+'" alt="'+item.title+'">'+
-      '<div class="info">'+item.title+'<small>'+item.meta+'</small></div>'+
-      '<b>'+iCart.fmt(item.price)+'</b></div>';
-  }).join('');
-  var total=iCart.cartTotal(items);
-  document.getElementById('coSubtotal').textContent=iCart.fmt(total);
-  document.getElementById('coTotal').textContent=iCart.fmt(total);
-
-  document.getElementById('checkoutForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    var orderNum='ISS-'+Math.floor(100000+Math.random()*900000);
-    var total=iCart.cartTotal();
-    iCart.clearCart();
-    document.getElementById('checkoutLayout').innerHTML='<div class="orderDone" style="grid-column:1/-1">'+
-      '<div class="checkIcon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>'+
-      '<h2>Bedankt voor je bestelling!</h2>'+
-      '<p>Bestelnummer <span class="orderNum">'+orderNum+'</span></p>'+
-      '<p>Totaal betaald: <span class="orderNum">'+iCart.fmt(total)+'</span></p>'+
-      '<p style="margin-top:18px">Je ontvangt een bevestiging per e-mail. We nemen persoonlijk contact met je op om de levering af te stemmen.</p>'+
-      '<a class="btn primary" href="index.html" style="margin-top:24px">Terug naar de shop →</a>'+
-    '</div>';
-  });
-}
-</script>
 </body>
 </html>

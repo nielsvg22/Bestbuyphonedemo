@@ -37,3 +37,38 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
     });
   },{passive:true});
 });
+
+document.querySelectorAll('.accHead').forEach(function(h){
+  h.addEventListener('click',function(){
+    var item=h.closest('.accItem');
+    var group=item.parentElement;
+    var body=item.querySelector('.accBody');
+    var wasOpen=item.classList.contains('open');
+    group.querySelectorAll('.accItem').forEach(function(i){
+      i.classList.remove('open');
+      i.querySelector('.accBody').style.maxHeight=0;
+    });
+    if(!wasOpen){
+      item.classList.add('open');
+      body.style.maxHeight=body.scrollHeight+'px';
+    }
+  });
+});
+
+document.querySelectorAll('.newsletterForm').forEach(function(form){
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    form.innerHTML='<span class="newsletterDone">Bedankt! We laten je weten zodra er nieuwe toestellen binnenkomen.</span>';
+  });
+});
+
+document.querySelectorAll('.contactForm').forEach(function(form){
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    form.innerHTML='<div class="orderDone" style="padding:30px 0">'+
+      '<div class="checkIcon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>'+
+      '<h2 style="font-size:22px">Bericht verstuurd!</h2>'+
+      '<p>Bedankt voor je bericht. We reageren binnen 24 uur persoonlijk terug.</p>'+
+    '</div>';
+  });
+});

@@ -160,7 +160,32 @@ footer{border-top:1px solid var(--line);padding:56px 0 34px;background:var(--ivo
 .footer h4{margin:0 0 14px;font-size:13px;font-weight:700;color:var(--navy)}
 .footer p,.footer a{display:block;color:var(--muted);font-size:13px;line-height:2;margin:0;transition:color .2s}
 .footer a:hover{color:var(--navy)}
-.finePrint{max-width:var(--max);margin:34px auto 0;padding:20px 22px 0;border-top:1px solid var(--line);color:#9a9a9e;font-size:12px}
+.footer a.js-tradein-trigger{cursor:pointer}
+
+.socialRow{display:flex;gap:10px;margin-top:18px}
+.socialIc{width:36px;height:36px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--navy);transition:background .2s,color .2s,transform .2s}
+.socialIc svg{width:16px;height:16px}
+.socialIc:hover{background:var(--coral);color:#fff;border-color:var(--coral);transform:translateY(-3px)}
+
+.newsletter{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 30px;margin-top:44px}
+.newsletter b{color:var(--navy);font-size:15px;display:block;margin-bottom:4px}
+.newsletter p{color:var(--muted);font-size:13px;margin:0}
+.newsletterForm{display:flex;gap:10px}
+.newsletterForm input{padding:12px 16px;border:1.5px solid var(--line);border-radius:980px;font-family:inherit;font-size:13.5px;min-width:220px}
+.newsletterForm input:focus{outline:none;border-color:var(--coral)}
+.newsletterDone{color:var(--coral-ink);font-weight:600;font-size:14px}
+
+.footerBadges{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;font-weight:600}
+.footerBadges span:first-child{color:#ff9f0a}
+
+.finePrint{max-width:var(--max);margin:24px auto 0;padding:20px 22px 0;border-top:1px solid var(--line);color:#9a9a9e;font-size:12px}
+
+@media(max-width:900px){ .footerBrand{grid-column:1/-1} }
+@media(max-width:640px){
+ .newsletter{flex-direction:column;align-items:stretch;text-align:center}
+ .newsletterForm{flex-direction:column}
+ .newsletterForm input{min-width:0}
+}
 
 /* Product detail page */
 .breadcrumb{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);margin-bottom:28px;flex-wrap:wrap}

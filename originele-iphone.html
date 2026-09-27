@@ -4,11 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#1f3049">
-<title>Afrekenen — iSelectStore</title>
+<title>Originele iPhone? — iSelectStore</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+.checklist{display:flex;flex-direction:column;gap:18px;max-width:720px}
+.checkStep{display:flex;gap:18px;align-items:flex-start}
+.checkNum{width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px;flex:none}
+.checkStep h4{margin:0 0 4px;color:var(--navy);font-size:15.5px}
+.checkStep p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+</style>
 </head>
 <body>
 <div class="top"><div class="topin"><span>Originele Apple producten</span><span>Exacte batterijconditie</span><span>6–12 maanden garantie</span><span>Inruil mogelijk</span></div></div>
@@ -30,46 +37,35 @@
 </nav>
 
 <main>
-<section style="padding-top:32px"><div class="wrap">
-  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="cart.html">Winkelwagen</a><span>/</span><span style="color:var(--navy)">Afrekenen</span></div>
-  <h1 style="margin-bottom:32px">Afrekenen</h1>
+<section class="shopHero"><div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:#fff">Originele iPhone?</span></div>
+  <p class="eyebrow">Betrouwbaarheid voorop</p>
+  <h1>Gegarandeerd origineel</h1>
+  <p>Geen imitaties, geen ongecertificeerde onderdelen. Zo weet je zeker dat je een écht, origineel Apple-product in handen krijgt.</p>
+</div></section>
 
-  <div class="cartLayout" id="checkoutLayout">
-    <div id="checkoutFormWrap">
-      <form id="checkoutForm">
-        <div class="checkoutBlock">
-          <h3>Contactgegevens</h3>
-          <div class="formRow"><input type="email" placeholder="E-mailadres" required></div>
-        </div>
-        <div class="checkoutBlock">
-          <h3>Verzendadres</h3>
-          <div class="formGrid">
-            <input placeholder="Voornaam" required>
-            <input placeholder="Achternaam" required>
-            <input placeholder="Straat en huisnummer" required style="grid-column:1/-1">
-            <input placeholder="Postcode" required>
-            <input placeholder="Plaats" required>
-          </div>
-        </div>
-        <div class="checkoutBlock">
-          <h3>Betaalmethode</h3>
-          <div class="payOptions">
-            <label class="payOption"><input type="radio" name="pay" checked><span>iDEAL</span></label>
-            <label class="payOption"><input type="radio" name="pay"><span>Creditcard</span></label>
-            <label class="payOption"><input type="radio" name="pay"><span>Klarna — achteraf betalen</span></label>
-          </div>
-        </div>
-        <button class="add" type="submit" style="width:100%;height:54px;font-size:15px">Bestelling plaatsen →</button>
-      </form>
+<section><div class="wrap reveal">
+  <p class="eyebrow">Waarom ons vertrouwen</p>
+  <h2 style="margin-bottom:18px">Wat maakt onze iPhones origineel?</h2>
+  <p class="sub" style="max-width:760px;font-size:16px;line-height:1.7;margin-bottom:40px">iSelectStore biedt een onderscheidend vermogen dat reguliere refurbished concurrenten niet kunnen leveren. We leveren premium pre-owned originele Apple-producten tegen de allerbeste prijs-kwaliteitverhouding, zonder compromissen te sluiten over de staat van het product. Bij ons vindt u geen ongecertificeerde gerepareerde onderdelen, waardoor u kunt vertrouwen op een betrouwbaar en probleemloos gebruik van uw Apple-product.</p>
+
+  <div class="checklist">
+    <div class="checkStep"><div class="checkNum">1</div><div><h4>IMEI- en Apple-serienummercontrole</h4><p>Elk toestel wordt gecontroleerd op een geldig, niet-geblokkeerd IMEI- en serienummer, rechtstreeks bij Apple.</p></div></div>
+    <div class="checkStep"><div class="checkNum">2</div><div><h4>Officiële Apple-diagnose</h4><p>We draaien de originele Apple-diagnosetools om batterijconditie, schermwerking en onderdelen te verifiëren.</p></div></div>
+    <div class="checkStep"><div class="checkNum">3</div><div><h4>Geen ongecertificeerde onderdelen</h4><p>Is er ooit iets vervangen, dan gebeurt dat met originele Apple-onderdelen — nooit met goedkope kopieën.</p></div></div>
+    <div class="checkStep"><div class="checkNum">4</div><div><h4>Unieke fotoreportage per toestel</h4><p>Je ziet het daadwerkelijke toestel dat je koopt: geen stockfoto's, maar duidelijke foto's van de werkelijke staat.</p></div></div>
+    <div class="checkStep"><div class="checkNum">5</div><div><h4>6–12 maanden garantie</h4><p>Mocht er toch iets zijn, dan staan we persoonlijk voor je klaar — met garantie op elk toestel.</p></div></div>
+  </div>
+</div></section>
+
+<section style="background:var(--ivory)"><div class="wrap reveal">
+  <div class="promo">
+    <div class="promocopy">
+      <h2>Only the<br>good ones.</h2>
+      <p>We already checked it for you. Elk toestel is persoonlijk gecontroleerd op staat en batterijconditie, voordat het bij ons in de shop komt.</p>
+      <a class="btn primary" href="shop.html">Bekijk de voorraad →</a>
     </div>
-
-    <aside class="cartSummary">
-      <h3>Je bestelling</h3>
-      <div id="checkoutItems"></div>
-      <div class="sumRow" style="margin-top:16px"><span>Subtotaal</span><b id="coSubtotal">€ 0,-</b></div>
-      <div class="sumRow"><span>Verzending</span><b>Gratis</b></div>
-      <div class="sumRow total"><span>Totaal</span><b id="coTotal">€ 0,-</b></div>
-    </aside>
+    <img src="images/iphone3.jpg" alt="iSelectStore gecontroleerd toestel">
   </div>
 </div></section>
 </main>
@@ -109,45 +105,5 @@
 <script src="cart.js"></script>
 <script src="main.js"></script>
 <script src="tradein.js"></script>
-<script>
-document.querySelectorAll('.payOption').forEach(function(opt){
-  opt.addEventListener('click',function(){
-    document.querySelectorAll('.payOption input').forEach(function(i){i.checked=false});
-    opt.querySelector('input').checked=true;
-  });
-});
-
-var items=iCart.getCart();
-if(!items.length){
-  document.getElementById('checkoutLayout').innerHTML='<div class="cartEmpty" style="grid-column:1/-1">'+
-    '<p>Je winkelwagen is leeg — er valt niets af te rekenen.</p>'+
-    '<a class="btn primary" href="shop.html">Bekijk voorraad →</a>'+
-  '</div>';
-}else{
-  document.getElementById('checkoutItems').innerHTML=items.map(function(item){
-    return '<div class="miniCartItem"><img src="'+item.img+'" alt="'+item.title+'">'+
-      '<div class="info">'+item.title+'<small>'+item.meta+'</small></div>'+
-      '<b>'+iCart.fmt(item.price)+'</b></div>';
-  }).join('');
-  var total=iCart.cartTotal(items);
-  document.getElementById('coSubtotal').textContent=iCart.fmt(total);
-  document.getElementById('coTotal').textContent=iCart.fmt(total);
-
-  document.getElementById('checkoutForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    var orderNum='ISS-'+Math.floor(100000+Math.random()*900000);
-    var total=iCart.cartTotal();
-    iCart.clearCart();
-    document.getElementById('checkoutLayout').innerHTML='<div class="orderDone" style="grid-column:1/-1">'+
-      '<div class="checkIcon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>'+
-      '<h2>Bedankt voor je bestelling!</h2>'+
-      '<p>Bestelnummer <span class="orderNum">'+orderNum+'</span></p>'+
-      '<p>Totaal betaald: <span class="orderNum">'+iCart.fmt(total)+'</span></p>'+
-      '<p style="margin-top:18px">Je ontvangt een bevestiging per e-mail. We nemen persoonlijk contact met je op om de levering af te stemmen.</p>'+
-      '<a class="btn primary" href="index.html" style="margin-top:24px">Terug naar de shop →</a>'+
-    '</div>';
-  });
-}
-</script>
 </body>
 </html>
